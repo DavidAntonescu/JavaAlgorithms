@@ -1,12 +1,12 @@
 
-## ciphers
-  * [AES](https://github.com/michaelraduu/JavaAlgorithms/blob/master/ciphers/AES.java)
-  * [AESEncryption](https://github.com/michaelraduu/JavaAlgorithms/blob/master/ciphers/AESEncryption.java)
-  * [Caesar](https://github.com/michaelraduu/JavaAlgorithms/blob/master/ciphers/Caesar.java)
-  * [ColumnarTranspositionCipher](https://github.com/michaelraduu/JavaAlgorithms/blob/master/ciphers/ColumnarTranspositionCipher.java)
-  * [RSA](https://github.com/michaelraduu/JavaAlgorithms/blob/master/ciphers/RSA.java)
-  * [SimpleSubstitutionCipher](https://github.com/michaelraduu/JavaAlgorithms/blob/master/ciphers/SimpleSubstitutionCipher.java)
-  * [Vigenere](https://github.com/michaelraduu/JavaAlgorithms/blob/master/ciphers/Vigenere.java)
+## Ciphers
+  * [AES](https://github.com/michaelraduu/JavaAlgorithms/blob/master/Ciphers/AES.java)
+  * [AESEncryption](https://github.com/michaelraduu/JavaAlgorithms/blob/master/Ciphers/AESEncryption.java)
+  * [Caesar](https://github.com/michaelraduu/JavaAlgorithms/blob/master/Ciphers/Caesar.java)
+  * [ColumnarTranspositionCipher](https://github.com/michaelraduu/JavaAlgorithms/blob/master/Ciphers/ColumnarTranspositionCipher.java)
+  * [RSA](https://github.com/michaelraduu/JavaAlgorithms/blob/master/Ciphers/RSA.java)
+  * [SimpleSubstitutionCipher](https://github.com/michaelraduu/JavaAlgorithms/blob/master/Ciphers/SimpleSubstitutionCipher.java)
+  * [Vigenere](https://github.com/michaelraduu/JavaAlgorithms/blob/master/Ciphers/Vigenere.java)
 
 ## Conversions
   * [AnyBaseToAnyBase](https://github.com/michaelraduu/JavaAlgorithms/blob/master/Conversions/AnyBaseToAnyBase.java)
@@ -84,9 +84,9 @@
     * [TrieImp](https://github.com/michaelraduu/JavaAlgorithms/blob/master/DataStructures/Trees/TrieImp.java)
     * [ValidBSTOrNot](https://github.com/michaelraduu/JavaAlgorithms/blob/master/DataStructures/Trees/ValidBSTOrNot.java)
 
-## divideconquer
-  * [ClosestPair](https://github.com/michaelraduu/JavaAlgorithms/blob/master/divideconquer/ClosestPair.java)
-  * [SkylineAlgorithm](https://github.com/michaelraduu/JavaAlgorithms/blob/master/divideconquer/SkylineAlgorithm.java)
+## DivideConquer
+  * [ClosestPair](https://github.com/michaelraduu/JavaAlgorithms/blob/master/DivideConquer/ClosestPair.java)
+  * [SkylineAlgorithm](https://github.com/michaelraduu/JavaAlgorithms/blob/master/DivideConquer/SkylineAlgorithm.java)
 
 ## DynamicProgramming
   * [CoinChange](https://github.com/michaelraduu/JavaAlgorithms/blob/master/DynamicProgramming/CoinChange.java)
