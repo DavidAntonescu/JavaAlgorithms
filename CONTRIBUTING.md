@@ -1,2 +1,2 @@
 ## Contribution Guidelines
-Read our [Contribution Guidelines](CONTRIBUTING.md) before you contribute.
+Read the [Contribution Guidelines](CONTRIBUTING.md) before you contribute.
