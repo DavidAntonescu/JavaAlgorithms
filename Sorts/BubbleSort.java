@@ -2,19 +2,11 @@ package Sorts;
 
 import static Sorts.SortUtils.*;
 
-/**
- * @author Varun Upadhyay (https://github.com/varunu28)
- * @author Podshivalov Nikita (https://github.com/nikitap492)
- * @see SortAlgorithm
- */
-
+/*@see SortAlgorithm*/
 class BubbleSort implements SortAlgorithm {
-    /**
-     * This method implements the Generic Bubble Sort
-     *
-     * @param array The array to be sorted
-     *              Sorts the array in increasing order
-     **/
+    /*This method implements the Generic Bubble Sort
+     *@param array The array to be sorted
+     *Sorts the array in increasing order*/
 
     @Override
     public <T extends Comparable<T>> T[] sort(T[] array) {
