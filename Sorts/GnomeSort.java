@@ -2,12 +2,9 @@ package Sorts;
 
 import static Sorts.SortUtils.*;
 
-/**
- * Implementation of gnome sort
- *
- * @author Podshivalov Nikita (https://github.com/nikitap492)
- * @since 2018-04-10
- **/
+/*Implementation of gnome sort
+* @year: 2016
+*/
 public class GnomeSort implements SortAlgorithm {
 
     @Override
