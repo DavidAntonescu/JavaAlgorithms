@@ -3,10 +3,7 @@ package Sorts;
 import java.util.Random;
 
 
-/**
- * @author Podshivalov Nikita (https://github.com/nikitap492)
- * @see SortAlgorithm
- */
+/* @see SortAlgorithm*/
 public class BogoSort implements SortAlgorithm {
 
     private static final Random random = new Random();
