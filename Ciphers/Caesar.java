@@ -2,25 +2,17 @@ package ciphers;
 
 import java.util.Scanner;
 
-/**
- *
- * A Java implementation of Caesar Cipher. /It is a type of substitution cipher
+/* A Java implementation of Caesar Cipher. It is a type of substitution cipher
  * in which each letter in the plaintext is replaced by a letter some fixed
- * number of positions down the alphabet. /
- *
- * @author FAHRI YARDIMCI
- * @author khalil2535
- */
+ * number of positions down the alphabet.*/
 public class Caesar {
 
-    /**
-     * Encrypt text by shifting every Latin char by add number shift for ASCII
+    /* Encrypt text by shifting every Latin char by add number shift for ASCII
      * Example : A + 1 -> B
-     *
      * @param message
      * @param shift
-     * @return Encrypted message
-     */
+     * @return Encrypted message*/
+    
     public static String encode(String message, int shift) {
         String encoded = "";
 
@@ -51,14 +43,12 @@ public class Caesar {
         return encoded;
     }
 
-    /**
-     * Decrypt message by shifting back every Latin char to previous the ASCII
+    /* Decrypt message by shifting back every Latin char to previous the ASCII
      * Example : B - 1 -> A
-     *
      * @param encryptedMessage
      * @param shift
-     * @return message
-     */
+     * @return message*/
+    
     public static String decode(String encryptedMessage, int shift) {
         String decoded = "";
 
@@ -86,28 +76,22 @@ public class Caesar {
         return decoded;
     }
 
-    /**
-     *
-     * @param c
-     * @return true if character is capital Latin letter or false for others
-     */
+    /* @param c
+     * @return true if character is capital Latin letter or false for others*/
+    
     private static boolean IsCapitalLatinLetter(char c) {
         return c >= 'A' && c <= 'Z';
     }
 
-    /**
-     *
-     * @param c
-     * @return true if character is small Latin letter or false for others
-     */
+    /* @param c
+     * @return true if character is small Latin letter or false for others*/
+    
     private static boolean IsSmallLatinLetter(char c) {
         return c >= 'a' && c <= 'z';
     }
 
-    /**
-     *
-     * @deprecated TODO remove main and make JUnit Testing
-     */
+    /*@deprecated TODO remove main and make JUnit Testing*/
+    
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.println("Please enter the message (Latin Alphabet)");
