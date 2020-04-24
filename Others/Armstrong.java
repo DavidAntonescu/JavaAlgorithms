@@ -2,13 +2,10 @@ package Others;
 
 import java.util.Scanner;
 
-/**
- * A utility to check if a given number is armstrong or not. Armstrong number is
- * a number that is equal to the sum of cubes of its digits for example 0, 1,
- * 153, 370, 371, 407 etc. For example 153 = 1^3 + 5^3 +3^3
- *
- * @author mani manasa mylavarapu
- */
+/*A utility to check if a given number is armstrong or not. Armstrong number is
+ *a number that is equal to the sum of cubes of its digits for example 0, 1, 153, 370, 371, 407 etc.
+ *So 153 = 1^3 + 5^3 +3^3*/
+
 public class Armstrong {
     static Scanner scan;
 
@@ -23,14 +20,12 @@ public class Armstrong {
         }
     }
 
-    /**
-     * Checks whether a given number is an armstrong number or not. Armstrong
-     * number is a number that is equal to the sum of cubes of its digits for
-     * example 0, 1, 153, 370, 371, 407 etc.
-     *
-     * @param number
-     * @return boolean
-     */
+    /*Checks whether a given number is an armstrong number or not. Armstrong
+     *number is a number that is equal to the sum of cubes of its digits for
+     *example 0, 1, 153, 370, 371, 407 etc.
+     *@param number
+     *@return boolean*/
+    
     public static boolean checkIfANumberIsAmstrongOrNot(int number) {
         int remainder, sum = 0, temp = 0;
         temp = number;
