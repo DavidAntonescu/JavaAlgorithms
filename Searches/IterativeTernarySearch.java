@@ -6,7 +6,7 @@ import java.util.stream.Stream;
 
 import static java.lang.String.format;
 
-/**
+/*
  * A iterative version of a ternary search algorithm
  * This is better way to implement the ternary search, because a recursive version adds some overhead to a stack.
  * But in java the compile can transform the recursive version to iterative implicitly,
@@ -16,12 +16,10 @@ import static java.lang.String.format;
  * Best-case performance	O(1)
  * Average performance	Θ(log3(N))
  * Worst-case space complexity	O(1)
- *
- * @author Podshivalov Nikita (https://github.com/nikitap492)
  * @see SearchAlgorithm
  * @see TernarySearch
  * @since 2018-04-13
- */
+*/
 
 public class IterativeTernarySearch implements SearchAlgorithm {
 
