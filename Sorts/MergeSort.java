@@ -2,23 +2,17 @@ package Sorts;
 
 import static Sorts.SortUtils.print;
 
-/**
- * This method implements the Generic Merge Sort
- *
- * @author Varun Upadhyay (https://github.com/varunu28)
- * @author Podshivalov Nikita (https://github.com/nikitap492)
+/* This method implements the Generic Merge Sort
  * @see SortAlgorithm
- */
+*/
 
 class MergeSort implements SortAlgorithm {
 
-    /**
-     * This method implements the Generic Merge Sort
-     *
+    /* This method implements the Generic Merge Sort
      * @param unsorted the array which should be sorted
      * @param <T>      Comparable class
      * @return sorted array
-     */
+    */
     @Override
     
     public <T extends Comparable<T>> T[] sort(T[] unsorted) {
@@ -26,12 +20,11 @@ class MergeSort implements SortAlgorithm {
         return unsorted;
     }
 
-    /**
-     * @param arr   The array to be sorted
+    /* @param arr   The array to be sorted
      * @param left  The first index of the array
      * @param right The last index of the array
-     *              Recursively sorts the array in increasing order
-     **/
+     * Recursively sorts the array in increasing order */
+    
     private static <T extends Comparable<T>> void doSort(T[] arr, int left, int right) {
         if (left < right) {
             int mid = left + (right - left) / 2;
@@ -42,15 +35,12 @@ class MergeSort implements SortAlgorithm {
 
     }
 
-    /**
-     * This method implements the merge step of the merge sort
-     *
+    /* This method implements the merge step of the merge sort
      * @param arr   The array to be sorted
      * @param left  The first index of the array
      * @param mid   The middle index of the array
      * @param right The last index of the array
-     *              merges two parts of an array in increasing order
-     **/
+     * merges two parts of an array in increasing order */
 
     private static <T extends Comparable<T>> void merge(T[] arr, int left, int mid, int right) {
         int length = right - left + 1;
