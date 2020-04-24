@@ -3,19 +3,13 @@ package Sorts;
 import static Sorts.SortUtils.less;
 import static Sorts.SortUtils.print;
 
-/**
- * @author Varun Upadhyay (https://github.com/varunu28)
- * @author Podshivalov Nikita (https://github.com/nikitap492)
- */
 
 class InsertionSort implements SortAlgorithm {
 
-    /**
-     * This method implements the Generic Insertion Sort
+    /* This method implements the Generic Insertion Sort
      * Sorts the array in increasing order
-     *
      * @param array The array to be sorted
-     **/
+    */
 
     @Override
     public <T extends Comparable<T>> T[] sort(T[] array) {
