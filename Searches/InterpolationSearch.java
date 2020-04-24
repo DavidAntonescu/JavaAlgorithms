@@ -6,15 +6,13 @@ import java.util.stream.IntStream;
 
 import static java.lang.String.format;
 
-/**
+/*
  * Interpolation search algorithm implementation
  * <p>
  * Worst-case performance	 O(n)
  * Best-case performance	O(1)
  * Average performance	O(log(log(n))) if the elements are  uniformly distributed if not O(n)
  * Worst-case space complexity	O(1)
- *
- * @author Podshivalov Nikita (https://github.com/nikitap492)
  */
 class InterpolationSearch {
 
