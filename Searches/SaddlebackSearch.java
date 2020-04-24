@@ -2,11 +2,9 @@ package Searches;
 
 import java.util.Scanner;
 
-/**
- * Program to perform Saddleback Search
+/* Program to perform Saddleback Search
  * Given a sorted 2D array(elements are sorted across every row and column, assuming ascending order)
  * of size n*m we can search a given element in O(n+m)
- * <p>
  * we start from bottom left corner
  * if the current element is greater than the given element then we move up
  * else we move right
@@ -19,14 +17,10 @@ import java.util.Scanner;
  * 100 120 130 140 150
  * 140 ->element to be searched
  * output: 4 3 // first value is row, second one is column
- *
- * @author Nishita Aggarwal
  */
 public class SaddlebackSearch {
 
-    /**
-     * This method performs Saddleback Search
-     *
+    /* This method performs Saddleback Search
      * @param arr The **Sorted** array in which we will search the element.
      * @param row the current row.
      * @param col the current column.
