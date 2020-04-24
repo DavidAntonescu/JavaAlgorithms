@@ -6,33 +6,24 @@ import java.util.List;
 
 import static Sorts.SortUtils.*;
 
-/**
- * Heap Sort Algorithm
+/* Heap Sort Algorithm
  * Implements MinHeap
- *
- * @author Podshivalov Nikita (https://github.com/nikitap492)
  */
 public class HeapSort implements SortAlgorithm {
 
 
     private static class Heap<T extends Comparable<T>> {
-        /**
-         * Array to store heap
-         */
+        /*Array to store heap*/
         private T[] heap;
 
-        /**
-         * Constructor
-         *
+        /*Constructor
          * @param heap array of unordered integers
          */
         public Heap(T[] heap) {
             this.heap = heap;
         }
 
-        /**
-         * Heapifies subtree from top as root to last as last child
-         *
+        /* Heapifies subtree from top as root to last as last child
          * @param rootIndex index of root
          * @param lastChild index of last child
          */
@@ -60,9 +51,7 @@ public class HeapSort implements SortAlgorithm {
         }
 
 
-        /**
-         * Makes heap with root as root
-         *
+        /* Makes heap with root as root
          * @param root index of root of heap
          */
         private void makeMinHeap(int root) {
@@ -79,11 +68,9 @@ public class HeapSort implements SortAlgorithm {
             }
         }
 
-        /**
-         * Gets the root of heap
-         *
+        /* Gets the root of heap
          * @return root of heap
-         */
+        */
         private T getRoot(int size) {
             swap(heap, 0, size);
             heapSubtree(0, size - 1);
@@ -115,11 +102,9 @@ public class HeapSort implements SortAlgorithm {
         return sorted;
     }
 
-    /**
-     * Main method
-     *
+    /* Main method
      * @param args the command line arguments
-     */
+    */
     public static void main(String[] args) {
         Integer[] heap = {4, 23, 6, 78, 1, 54, 231, 9, 12};
         HeapSort heapSort = new HeapSort();
