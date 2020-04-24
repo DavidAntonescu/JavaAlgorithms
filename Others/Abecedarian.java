@@ -1,10 +1,7 @@
 package Others;
 
-/**
- * An Abecadrian is a word where each letter is in alphabetical order
- *
- * @author Oskar Enmalm
- */
+/*An Abecadrian is a word where each letter is in alphabetical order*/
+
 class Abecedarian {
 
     public static boolean isAbecedarian(String s) {
