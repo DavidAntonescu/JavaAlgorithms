@@ -3,17 +3,13 @@ package ciphers;
 import java.math.BigInteger;
 import java.util.Scanner;
 
-/**
- * This class is build to demonstrate the application of the AES-algorithm on a
- * single 128-Bit block of data.
- *
- */
+/* This class is build to demonstrate the application of the AES-algorithm on a
+ * single 128-Bit block of data. */
+
 public class AES {
 
-	/**
-	 * Precalculated values for x to the power of 2 in Rijndaels galois field. Used
-	 * as 'RCON' during the key expansion.
-	 */
+	/* Precalculated values for x to the power of 2 in Rijndaels galois field. Used as 'RCON' during the key expansion.*/
+	
 	private static final int[] RCON = { 0x8d, 0x01, 0x02, 0x04, 0x08, 0x10, 0x20, 0x40, 0x80, 0x1b, 0x36, 0x6c, 0xd8,
 			0xab, 0x4d, 0x9a, 0x2f, 0x5e, 0xbc, 0x63, 0xc6, 0x97, 0x35, 0x6a, 0xd4, 0xb3, 0x7d, 0xfa, 0xef, 0xc5, 0x91,
 			0x39, 0x72, 0xe4, 0xd3, 0xbd, 0x61, 0xc2, 0x9f, 0x25, 0x4a, 0x94, 0x33, 0x66, 0xcc, 0x83, 0x1d, 0x3a, 0x74,
@@ -30,10 +26,8 @@ public class AES {
 			0xb3, 0x7d, 0xfa, 0xef, 0xc5, 0x91, 0x39, 0x72, 0xe4, 0xd3, 0xbd, 0x61, 0xc2, 0x9f, 0x25, 0x4a, 0x94, 0x33,
 			0x66, 0xcc, 0x83, 0x1d, 0x3a, 0x74, 0xe8, 0xcb, 0x8d };
 
-	/**
-	 * Rijndael S-box Substitution table used for encryption in the subBytes step,
-	 * as well as the key expansion.
-	 */
+	/*Rijndael S-box Substitution table used for encryption in the subBytes step, as well as the key expansion.*/
+	
 	private static final int[] SBOX = { 0x63, 0x7C, 0x77, 0x7B, 0xF2, 0x6B, 0x6F, 0xC5, 0x30, 0x01, 0x67, 0x2B, 0xFE,
 			0xD7, 0xAB, 0x76, 0xCA, 0x82, 0xC9, 0x7D, 0xFA, 0x59, 0x47, 0xF0, 0xAD, 0xD4, 0xA2, 0xAF, 0x9C, 0xA4, 0x72,
 			0xC0, 0xB7, 0xFD, 0x93, 0x26, 0x36, 0x3F, 0xF7, 0xCC, 0x34, 0xA5, 0xE5, 0xF1, 0x71, 0xD8, 0x31, 0x15, 0x04,
@@ -50,10 +44,8 @@ public class AES {
 			0xD9, 0x8E, 0x94, 0x9B, 0x1E, 0x87, 0xE9, 0xCE, 0x55, 0x28, 0xDF, 0x8C, 0xA1, 0x89, 0x0D, 0xBF, 0xE6, 0x42,
 			0x68, 0x41, 0x99, 0x2D, 0x0F, 0xB0, 0x54, 0xBB, 0x16 };
 
-	/**
-	 * Inverse Rijndael S-box Substitution table used for decryption in the
-	 * subBytesDec step.
-	 */
+	/*Inverse Rijndael S-box Substitution table used for decryption in the subBytesDec step.*/
+	
 	private static final int[] INVERSE_SBOX = { 0x52, 0x09, 0x6A, 0xD5, 0x30, 0x36, 0xA5, 0x38, 0xBF, 0x40, 0xA3, 0x9E,
 			0x81, 0xF3, 0xD7, 0xFB, 0x7C, 0xE3, 0x39, 0x82, 0x9B, 0x2F, 0xFF, 0x87, 0x34, 0x8E, 0x43, 0x44, 0xC4, 0xDE,
 			0xE9, 0xCB, 0x54, 0x7B, 0x94, 0x32, 0xA6, 0xC2, 0x23, 0x3D, 0xEE, 0x4C, 0x95, 0x0B, 0x42, 0xFA, 0xC3, 0x4E,
@@ -70,10 +62,8 @@ public class AES {
 			0xAE, 0x2A, 0xF5, 0xB0, 0xC8, 0xEB, 0xBB, 0x3C, 0x83, 0x53, 0x99, 0x61, 0x17, 0x2B, 0x04, 0x7E, 0xBA, 0x77,
 			0xD6, 0x26, 0xE1, 0x69, 0x14, 0x63, 0x55, 0x21, 0x0C, 0x7D };
 
-	/**
-	 * Precalculated lookup table for galois field multiplication by 2 used in the
-	 * MixColums step during encryption.
-	 */
+	/*Precalculated lookup table for galois field multiplication by 2 used in the MixColums step during encryption.*/
+	
 	private static final int[] MULT2 = { 0x00, 0x02, 0x04, 0x06, 0x08, 0x0a, 0x0c, 0x0e, 0x10, 0x12, 0x14, 0x16, 0x18,
 			0x1a, 0x1c, 0x1e, 0x20, 0x22, 0x24, 0x26, 0x28, 0x2a, 0x2c, 0x2e, 0x30, 0x32, 0x34, 0x36, 0x38, 0x3a, 0x3c,
 			0x3e, 0x40, 0x42, 0x44, 0x46, 0x48, 0x4a, 0x4c, 0x4e, 0x50, 0x52, 0x54, 0x56, 0x58, 0x5a, 0x5c, 0x5e, 0x60,
@@ -90,10 +80,8 @@ public class AES {
 			0xd1, 0xd7, 0xd5, 0xcb, 0xc9, 0xcf, 0xcd, 0xc3, 0xc1, 0xc7, 0xc5, 0xfb, 0xf9, 0xff, 0xfd, 0xf3, 0xf1, 0xf7,
 			0xf5, 0xeb, 0xe9, 0xef, 0xed, 0xe3, 0xe1, 0xe7, 0xe5 };
 
-	/**
-	 * Precalculated lookup table for galois field multiplication by 3 used in the
-	 * MixColums step during encryption.
-	 */
+	/* Precalculated lookup table for galois field multiplication by 3 used in the MixColums step during encryption.*/
+	
 	private static final int[] MULT3 = { 0x00, 0x03, 0x06, 0x05, 0x0c, 0x0f, 0x0a, 0x09, 0x18, 0x1b, 0x1e, 0x1d, 0x14,
 			0x17, 0x12, 0x11, 0x30, 0x33, 0x36, 0x35, 0x3c, 0x3f, 0x3a, 0x39, 0x28, 0x2b, 0x2e, 0x2d, 0x24, 0x27, 0x22,
 			0x21, 0x60, 0x63, 0x66, 0x65, 0x6c, 0x6f, 0x6a, 0x69, 0x78, 0x7b, 0x7e, 0x7d, 0x74, 0x77, 0x72, 0x71, 0x50,
@@ -110,10 +98,8 @@ public class AES {
 			0x34, 0x31, 0x32, 0x23, 0x20, 0x25, 0x26, 0x2f, 0x2c, 0x29, 0x2a, 0x0b, 0x08, 0x0d, 0x0e, 0x07, 0x04, 0x01,
 			0x02, 0x13, 0x10, 0x15, 0x16, 0x1f, 0x1c, 0x19, 0x1a };
 
-	/**
-	 * Precalculated lookup table for galois field multiplication by 9 used in the
-	 * MixColums step during decryption.
-	 */
+	/*Precalculated lookup table for galois field multiplication by 9 used in the MixColums step during decryption.*/
+	
 	private static final int[] MULT9 = { 0x00, 0x09, 0x12, 0x1b, 0x24, 0x2d, 0x36, 0x3f, 0x48, 0x41, 0x5a, 0x53, 0x6c,
 			0x65, 0x7e, 0x77, 0x90, 0x99, 0x82, 0x8b, 0xb4, 0xbd, 0xa6, 0xaf, 0xd8, 0xd1, 0xca, 0xc3, 0xfc, 0xf5, 0xee,
 			0xe7, 0x3b, 0x32, 0x29, 0x20, 0x1f, 0x16, 0x0d, 0x04, 0x73, 0x7a, 0x61, 0x68, 0x57, 0x5e, 0x45, 0x4c, 0xab,
@@ -130,10 +116,8 @@ public class AES {
 			0x8c, 0x97, 0x9e, 0xe9, 0xe0, 0xfb, 0xf2, 0xcd, 0xc4, 0xdf, 0xd6, 0x31, 0x38, 0x23, 0x2a, 0x15, 0x1c, 0x07,
 			0x0e, 0x79, 0x70, 0x6b, 0x62, 0x5d, 0x54, 0x4f, 0x46 };
 
-	/**
-	 * Precalculated lookup table for galois field multiplication by 11 used in the
-	 * MixColums step during decryption.
-	 */
+	/*Precalculated lookup table for galois field multiplication by 11 used in the MixColums step during decryption.*/
+	
 	private static final int[] MULT11 = { 0x00, 0x0b, 0x16, 0x1d, 0x2c, 0x27, 0x3a, 0x31, 0x58, 0x53, 0x4e, 0x45, 0x74,
 			0x7f, 0x62, 0x69, 0xb0, 0xbb, 0xa6, 0xad, 0x9c, 0x97, 0x8a, 0x81, 0xe8, 0xe3, 0xfe, 0xf5, 0xc4, 0xcf, 0xd2,
 			0xd9, 0x7b, 0x70, 0x6d, 0x66, 0x57, 0x5c, 0x41, 0x4a, 0x23, 0x28, 0x35, 0x3e, 0x0f, 0x04, 0x19, 0x12, 0xcb,
@@ -150,10 +134,8 @@ public class AES {
 			0x5d, 0x40, 0x4b, 0x22, 0x29, 0x34, 0x3f, 0x0e, 0x05, 0x18, 0x13, 0xca, 0xc1, 0xdc, 0xd7, 0xe6, 0xed, 0xf0,
 			0xfb, 0x92, 0x99, 0x84, 0x8f, 0xbe, 0xb5, 0xa8, 0xa3 };
 
-	/**
-	 * Precalculated lookup table for galois field multiplication by 13 used in the
-	 * MixColums step during decryption.
-	 */
+	/*Precalculated lookup table for galois field multiplication by 13 used in the MixColums step during decryption.*/
+	
 	private static final int[] MULT13 = { 0x00, 0x0d, 0x1a, 0x17, 0x34, 0x39, 0x2e, 0x23, 0x68, 0x65, 0x72, 0x7f, 0x5c,
 			0x51, 0x46, 0x4b, 0xd0, 0xdd, 0xca, 0xc7, 0xe4, 0xe9, 0xfe, 0xf3, 0xb8, 0xb5, 0xa2, 0xaf, 0x8c, 0x81, 0x96,
 			0x9b, 0xbb, 0xb6, 0xa1, 0xac, 0x8f, 0x82, 0x95, 0x98, 0xd3, 0xde, 0xc9, 0xc4, 0xe7, 0xea, 0xfd, 0xf0, 0x6b,
@@ -170,10 +152,8 @@ public class AES {
 			0x35, 0x22, 0x2f, 0x64, 0x69, 0x7e, 0x73, 0x50, 0x5d, 0x4a, 0x47, 0xdc, 0xd1, 0xc6, 0xcb, 0xe8, 0xe5, 0xf2,
 			0xff, 0xb4, 0xb9, 0xae, 0xa3, 0x80, 0x8d, 0x9a, 0x97 };
 
-	/**
-	 * Precalculated lookup table for galois field multiplication by 14 used in the
-	 * MixColums step during decryption.
-	 */
+	/*Precalculated lookup table for galois field multiplication by 14 used in the MixColums step during decryption.*/
+	
 	private static final int[] MULT14 = { 0x00, 0x0e, 0x1c, 0x12, 0x38, 0x36, 0x24, 0x2a, 0x70, 0x7e, 0x6c, 0x62, 0x48,
 			0x46, 0x54, 0x5a, 0xe0, 0xee, 0xfc, 0xf2, 0xd8, 0xd6, 0xc4, 0xca, 0x90, 0x9e, 0x8c, 0x82, 0xa8, 0xa6, 0xb4,
 			0xba, 0xdb, 0xd5, 0xc7, 0xc9, 0xe3, 0xed, 0xff, 0xf1, 0xab, 0xa5, 0xb7, 0xb9, 0x93, 0x9d, 0x8f, 0x81, 0x3b,
@@ -190,13 +170,11 @@ public class AES {
 			0x01, 0x13, 0x1d, 0x47, 0x49, 0x5b, 0x55, 0x7f, 0x71, 0x63, 0x6d, 0xd7, 0xd9, 0xcb, 0xc5, 0xef, 0xe1, 0xf3,
 			0xfd, 0xa7, 0xa9, 0xbb, 0xb5, 0x9f, 0x91, 0x83, 0x8d };
 
-	/**
-	 * Subroutine of the Rijndael key expansion.
-	 *
+	/*Subroutine of the Rijndael key expansion.
 	 * @param t
 	 * @param rconCounter
-	 * @return
-	 */
+	 * @return*/
+	
 	public static BigInteger scheduleCore(BigInteger t, int rconCounter) {
 		String rBytes = t.toString(16);
 
@@ -240,11 +218,8 @@ public class AES {
 		return new BigInteger(rBytes, 16);
 	}
 
-	/**
-	 *
-	 * Returns an array of 10 + 1 round keys that are calculated by using Rijndael
+	/*Returns an array of 10 + 1 round keys that are calculated by using Rijndael
 	 * key schedule
-	 *
 	 * @param initialKey
 	 * @return array of 10 + 1 round keys
 	 */
@@ -289,13 +264,10 @@ public class AES {
 		return roundKeys;
 	}
 
-	/**
-	 * representation of the input 128-bit block as an array of 8-bit integers.
-	 *
-	 * @param block
-	 *            of 128-bit integers
-	 * @return array of 8-bit integers
-	 */
+	/*representation of the input 128-bit block as an array of 8-bit integers.
+	 * @param block of 128-bit integers
+	 * @return array of 8-bit integers*/
+	
 	public static int[] splitBlockIntoCells(BigInteger block) {
 
 		int[] cells = new int[16];
@@ -315,14 +287,10 @@ public class AES {
 		return cells;
 	}
 
-	/**
-	 * Returns the 128-bit BigInteger representation of the input of an array of
-	 * 8-bit integers.
-	 *
-	 * @param cells
-	 *            that we need to merge
-	 * @return block of merged cells
-	 */
+	/*Returns the 128-bit BigInteger representation of the input of an array of 8-bit integers.
+	 *@param cells that we need to merge
+	 *@return block of merged cells*/
+	
 	public static BigInteger mergeCellsIntoBlock(int[] cells) {
 
 		String blockBits = "";
@@ -340,23 +308,17 @@ public class AES {
 		return new BigInteger(blockBits, 2);
 	}
 
-	/**
-	 *
-	 * @param ciphertext
-	 * @param key
-	 * @return ciphertext XOR key
-	 */
+	/*@param ciphertext
+	 *@param key
+	 *@return ciphertext XOR key*/
+	
 	public static BigInteger addRoundKey(BigInteger ciphertext, BigInteger key) {
 		return ciphertext.xor(key);
 	}
 
-	/**
-	 * substitutes 8-Bit long substrings of the input using the S-Box and returns
-	 * the result.
-	 *
-	 * @param ciphertext
-	 * @return subtraction Output
-	 */
+	/*substitutes 8-Bit long substrings of the input using the S-Box and returns the result.
+	 *@param ciphertext
+	 *@return subtraction Output*/
 	public static BigInteger subBytes(BigInteger ciphertext) {
 
 		int[] cells = splitBlockIntoCells(ciphertext);
@@ -368,13 +330,10 @@ public class AES {
 		return mergeCellsIntoBlock(cells);
 	}
 
-	/**
-	 * substitutes 8-Bit long substrings of the input using the inverse S-Box for
-	 * decryption and returns the result.
-	 *
-	 * @param ciphertext
-	 * @return subtraction Output
-	 */
+	/*substitutes 8-Bit long substrings of the input using the inverse S-Box for decryption and returns the result.
+	 *@param ciphertext
+	 *@return subtraction Output*/
+	
 	public static BigInteger subBytesDec(BigInteger ciphertext) {
 
 		int[] cells = splitBlockIntoCells(ciphertext);
@@ -386,12 +345,9 @@ public class AES {
 		return mergeCellsIntoBlock(cells);
 	}
 
-	/**
-	 * Cell permutation step. Shifts cells within the rows of the input and returns
-	 * the result.
-	 *
-	 * @param ciphertext
-	 */
+	/*Cell permutation step. Shifts cells within the rows of the input and returns the result.
+	 *@param ciphertext*/
+	
 	public static BigInteger shiftRows(BigInteger ciphertext) {
 		int[] cells = splitBlockIntoCells(ciphertext);
 		int[] output = new int[16];
@@ -423,12 +379,9 @@ public class AES {
 		return mergeCellsIntoBlock(output);
 	}
 
-	/**
-	 * Cell permutation step for decryption . Shifts cells within the rows of the
-	 * input and returns the result.
-	 *
-	 * @param ciphertext
-	 */
+	/*Cell permutation step for decryption . Shifts cells within the rows of the input and returns the result.
+	 *@param ciphertext*/
+	
 	public static BigInteger shiftRowsDec(BigInteger ciphertext) {
 		int[] cells = splitBlockIntoCells(ciphertext);
 		int[] output = new int[16];
@@ -460,11 +413,9 @@ public class AES {
 		return mergeCellsIntoBlock(output);
 	}
 
-	/**
-	 * Applies the Rijndael MixColumns to the input and returns the result.
-	 *
-	 * @param ciphertext
-	 */
+	/*Applies the Rijndael MixColumns to the input and returns the result.
+	 *@param ciphertext*/
+	
 	public static BigInteger mixColumns(BigInteger ciphertext) {
 
 		int[] cells = splitBlockIntoCells(ciphertext);
@@ -481,12 +432,9 @@ public class AES {
 		return mergeCellsIntoBlock(outputCells);
 	}
 
-	/**
-	 * Applies the inverse Rijndael MixColumns for decryption to the input and
-	 * returns the result.
-	 *
-	 * @param ciphertext
-	 */
+	/*Applies the inverse Rijndael MixColumns for decryption to the input and returns the result.
+	 * @param ciphertext*/
+	
 	public static BigInteger mixColumnsDec(BigInteger ciphertext) {
 
 		int[] cells = splitBlockIntoCells(ciphertext);
@@ -503,15 +451,13 @@ public class AES {
 		return mergeCellsIntoBlock(outputCells);
 	}
 
-	/**
-	 * Encrypts the plaintext with the key and returns the result
-	 *
-	 * @param plainText
-	 *            which we want to encrypt
-	 * @param key
-	 *            the key for encrypt
-	 * @return EncryptedText
-	 */
+	/*Encrypts the plaintext with the key and returns the result
+	 *@param plainText
+	 *which we want to encrypt
+	 *@param key
+	 *the key for encrypt
+	 *@return EncryptedText*/
+	
 	public static BigInteger encrypt(BigInteger plainText, BigInteger key) {
 		BigInteger[] roundKeys = keyExpansion(key);
 
@@ -534,14 +480,12 @@ public class AES {
 		return plainText;
 	}
 
-	/**
-	 * Decrypts the ciphertext with the key and returns the result
-	 *
-	 * @param cipherText
-	 *            The Encrypted text which we want to decrypt
-	 * @param key
-	 * @return decryptedText
-	 */
+	/*Decrypts the ciphertext with the key and returns the result
+	 *@param cipherText
+	 *The Encrypted text which we want to decrypt
+	 *@param key
+	 *@return decryptedText*/
+	
 	public static BigInteger decrypt(BigInteger cipherText, BigInteger key) {
 
 		BigInteger[] roundKeys = keyExpansion(key);
