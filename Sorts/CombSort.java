@@ -4,18 +4,13 @@ import static Sorts.SortUtils.*;
 
 
 /* Comb Sort algorithm implementation
- * <p>
  * Best-case performance O(n * log(n))
  * Worst-case performance O(n ^ 2)
  * Worst-case space complexity O(1)
- * <p>
  * Comb sort improves on bubble sort.
- *
- * @author Sandeep Roy (https://github.com/sandeeproy99)
- * @author Podshivalov Nikita (https://github.com/nikitap492)
  * @see BubbleSort
- * @see SortAlgorithm
- */
+ * @see SortAlgorithm*/
+
 class CombSort implements SortAlgorithm {
 
     // To find gap between elements
@@ -25,12 +20,10 @@ class CombSort implements SortAlgorithm {
         return (gap < 1) ? 1 : gap;
     }
 
-    /**
-     * Function to sort arr[] using Comb
-     *
+    /* Function to sort arr[] using Comb
      * @param arr - an array should be sorted
-     * @return sorted array
-     */
+     * @return sorted array*/
+    
     @Override
     public <T extends Comparable<T>> T[] sort(T[] arr) {
         int size = arr.length;
