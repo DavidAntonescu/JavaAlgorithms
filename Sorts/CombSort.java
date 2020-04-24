@@ -3,8 +3,7 @@ package Sorts;
 import static Sorts.SortUtils.*;
 
 
-/**
- * Comb Sort algorithm implementation
+/* Comb Sort algorithm implementation
  * <p>
  * Best-case performance O(n * log(n))
  * Worst-case performance O(n ^ 2)
