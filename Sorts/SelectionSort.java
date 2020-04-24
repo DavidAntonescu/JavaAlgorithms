@@ -2,12 +2,6 @@ package Sorts;
 
 public class SelectionSort implements SortAlgorithm {
 
-    /**
-     * This method implements the Generic Selection Sort
-     *
-     * @param arr The array to be sorted
-     *            Sorts the array in increasing order
-     **/
     @Override
     public <T extends Comparable<T>> T[] sort(T[] arr) {
         int n = arr.length;
