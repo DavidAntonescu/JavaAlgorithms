@@ -2,19 +2,14 @@ package Others;
 
 import java.util.ArrayList;
 
-/**
- * @author Dekas Dimitrios
- */
 public class BestFit {
     private static final int NO_ALLOCATION = -255; // if a process has been allocated in position -255,
                                                    // it means that it has not been actually allocated.
 
-    /**
-     * Method to find the maximum valued element of an array filled with positive integers.
-     *
-     * @param array: an array filled with positive integers.
-     * @return the maximum valued element of the array.
-     */
+    /*Method to find the maximum valued element of an array filled with positive integers.
+     *@param array: an array filled with positive integers.
+     *@return the maximum valued element of the array.*/
+    
     private static int findMaxElement(int[] array) {
         int max = -1;
         for (int value : array) {
@@ -25,13 +20,11 @@ public class BestFit {
         return max;
     }
 
-    /**
-     * Method to find the index of the memory block that is going to fit the given process based on the best fit algorithm.
-     *
-     * @param blocks: the array with the available memory blocks.
-     * @param process: the size of the process.
-     * @return the index of the block that fits, or -255 if no such block exists.
-     */
+    /*Method to find the index of the memory block that is going to fit the given process based on the best fit algorithm.
+     *@param blocks: the array with the available memory blocks.
+     *@param process: the size of the process.
+     *@return the index of the block that fits, or -255 if no such block exists.*/
+    
     private static int findBestFit(int[] blockSizes, int processSize) {
         // Initialize minDiff with an unreachable value by a difference between a blockSize and the processSize.
         int minDiff = findMaxElement(blockSizes);
@@ -45,16 +38,12 @@ public class BestFit {
         return index;
     }
 
-    /**
-     * Method to allocate memory to blocks according to the best fit
-     * algorithm. It should return an ArrayList of Integers, where the
-     * index is the process ID (zero-indexed) and the value is the block
-     * number (also zero-indexed).
-     *
+    /* Method to allocate memory to blocks according to the best fit algorithm. It should return an ArrayList of Integers, 
+     * where the index is the process ID (zero-indexed) and the value is the block number (also zero-indexed).
      * @param sizeOfBlocks: an int array that contains the sizes of the memory blocks available.
      * @param sizeOfProcesses: an int array that contains the sizes of the processes we need memory blocks for.
-     * @return the ArrayList filled with Integers repressenting the memory allocation that took place.
-     */
+     * @return the ArrayList filled with Integers repressenting the memory allocation that took place.*/
+    
     static ArrayList<Integer> bestFit(int[] sizeOfBlocks, int[] sizeOfProcesses) {
         // The array list responsible for saving the memory allocations done by the best-fit algorithm
         ArrayList<Integer> memAlloc = new ArrayList<>();
@@ -69,11 +58,9 @@ public class BestFit {
         return memAlloc;
     }
 
-    /**
-     * Method to print the memory allocated.
-     *
-     * @param memAllocation: an ArrayList of Integer representing the memory allocation done by the bestFit method.
-     */
+    /*Method to print the memory allocated.
+     *@param memAllocation: an ArrayList of Integer representing the memory allocation done by the bestFit method.*/
+    
     public static void printMemoryAllocation(ArrayList<Integer> memAllocation) {
         System.out.println("Process No.\tBlock No.");
         System.out.println("===========\t=========");
