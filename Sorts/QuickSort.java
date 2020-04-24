@@ -2,19 +2,13 @@ package Sorts;
 
 import static Sorts.SortUtils.*;
 
-/**
- * @author Varun Upadhyay (https://github.com/varunu28)
- * @author Podshivalov Nikita (https://github.com/nikitap492)
- * @see SortAlgorithm
- */
+/*@see SortAlgorithm*/
+
 class QuickSort implements SortAlgorithm {
 
-    /**
-     * This method implements the Generic Quick Sort
-     *
+    /* This method implements the Generic Quick Sort
      * @param array The array to be sorted
-     *              Sorts the array in increasing order
-     **/
+     * Sorts the array in increasing order*/
 
     @Override
     public <T extends Comparable<T>> T[] sort(T[] array) {
@@ -23,13 +17,10 @@ class QuickSort implements SortAlgorithm {
     }
 
 
-    /**
-     * The sorting process
-     *
+    /* The sorting process
      * @param left  The first index of an array
      * @param right The last index of an array
-     * @param array The array to be sorted
-     **/
+     * @param array The array to be sorted*/
 
     private static <T extends Comparable<T>> void doSort(T[] array, int left, int right) {
         if (left < right) {
@@ -39,14 +30,11 @@ class QuickSort implements SortAlgorithm {
         }
     }
 
-    /**
-     * Ramdomize the array to avoid the basically ordered sequences
-     * 
+    /*Ramdomize the array to avoid the basically ordered sequences
      * @param array The array to be sorted
      * @param left  The first index of an array
      * @param right The last index of an array
-     * @return the partition index of the array
-     */
+     * @return the partition index of the array*/
 
     private static <T extends Comparable<T>> int randomPartition(T[] array, int left, int right) {
         int randomIndex = left + (int)(Math.random()*(right - left + 1));
@@ -54,14 +42,11 @@ class QuickSort implements SortAlgorithm {
         return partition(array, left, right);
     }
 
-    /**
-     * This method finds the partition index for an array
-     *
+    /* This method finds the partition index for an array
      * @param array The array to be sorted
      * @param left  The first index of an array
      * @param right The last index of an array
-     *              Finds the partition index of an array
-     **/
+     * Finds the partition index of an array */
 
     private static <T extends Comparable<T>> int partition(T[] array, int left, int right) {
         int mid = (left + right) / 2;
