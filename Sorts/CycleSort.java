@@ -3,9 +3,6 @@ package Sorts;
 import static Sorts.SortUtils.less;
 import static Sorts.SortUtils.print;
 
-/**
- * @author Podshivalov Nikita (https://github.com/nikitap492)
- */
 class CycleSort implements SortAlgorithm {
 
     @Override
