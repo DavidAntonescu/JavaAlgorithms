@@ -12,9 +12,7 @@ public class JumpSearch implements SearchAlgorithm {
         assert jumpSearch.find(array, 11) == -1;
     }
 
-    /**
-     * Jump Search algorithm implements
-     *
+    /*Jump Search algorithm implements
      * @param array the array contains elements
      * @param key   to be searched
      * @return index of {@code key} if found, otherwise <tt>-1</tt>
