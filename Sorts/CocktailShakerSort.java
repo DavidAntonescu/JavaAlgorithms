@@ -1,18 +1,16 @@
 package Sorts;
 
-/**
- * @author Mateus Bizzo (https://github.com/MattBizzo)
- * @author Podshivalov Nikita (https://github.com/nikitap492)
+/*Thanks to:
+ * Mateus Bizzo (https://github.com/MattBizzo)
+ * Podshivalov Nikita (https://github.com/nikitap492)
  */
 
 class CocktailShakerSort implements SortAlgorithm {
 
-    /**
-     * This method implements the Generic Cocktail Shaker Sort
-     *
+    /* This method implements the Generic Cocktail Shaker Sort
      * @param array The array to be sorted
-     *              Sorts the array in increasing order
-     **/
+     * Sorts the array in increasing order
+     */
 
     @Override
     public <T extends Comparable<T>> T[] sort(T[] array) {
