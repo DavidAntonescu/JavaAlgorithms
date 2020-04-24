@@ -4,9 +4,6 @@ import java.util.Collections;
 import java.util.PriorityQueue;
 
 
-/**
- * @author shrutisheoran
- */
 public class MedianOfRunningArray {
     private PriorityQueue<Integer> p1;
     private PriorityQueue<Integer> p2;
@@ -17,19 +14,16 @@ public class MedianOfRunningArray {
         this.p2 = new PriorityQueue<>(); //Min Heap
     }
 
-    /* 
-        Inserting lower half of array to max Heap
-        and upper half to min heap
-    */
+    /*Inserting lower half of array to max Heap and upper half to min heap*/
+    
     public void insert(Integer e) {
         p2.add(e);
         if (p2.size() - p1.size() > 1)
             p1.add(p2.remove());
     }
 
-    /*
-        Returns median at any given point
-    */
+    /*Returns median at any given point*/
+    
     public Integer median() {
         if (p1.size() == p2.size())
             return (p1.peek() + p2.peek()) / 2;
@@ -37,9 +31,8 @@ public class MedianOfRunningArray {
     }
 
     public static void main(String[] args) {
-        /*
-            Testing the median function
-        */
+        
+        /*Testing the median function*/
 
         MedianOfRunningArray p = new MedianOfRunningArray();
         int arr[] = {10, 7, 4, 9, 2, 3, 11, 17, 14};
