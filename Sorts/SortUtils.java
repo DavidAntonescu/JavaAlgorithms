@@ -3,11 +3,6 @@ package Sorts;
 import java.util.Arrays;
 import java.util.List;
 
-/**
- * The class contains util methods
- *
- * @author Podshivalov Nikita (https://github.com/nikitap492)
- **/
 final class SortUtils {
 
     /**
