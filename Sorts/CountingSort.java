@@ -8,10 +8,7 @@ import static java.util.stream.Collectors.toList;
 import static java.util.stream.Collectors.toMap;
 import static Sorts.SortUtils.print;
 
-/**
- * @author Youssef Ali (https://github.com/youssefAli11997)
- * @author Podshivalov Nikita (https://github.com/nikitap492)
- */
+
 class CountingSort implements SortAlgorithm {
 
     @Override
@@ -19,14 +16,11 @@ class CountingSort implements SortAlgorithm {
         return sort(Arrays.asList(unsorted)).toArray(unsorted);
     }
 
-    /**
-     * This method implements the Generic Counting Sort
-     *
+    /* This method implements the Generic Counting Sort
      * @param list The list to be sorted
-     *             <p>
-     *             Sorts the list in increasing order
-     *             The method uses list elements as keys in the frequency map
-     **/
+     * Sorts the list in increasing order
+     * The method uses list elements as keys in the frequency map
+     */
     @Override
     public <T extends Comparable<T>> List<T> sort(List<T> list) {
 
@@ -48,12 +42,10 @@ class CountingSort implements SortAlgorithm {
     }
 
 
-    /**
-     * Stream Counting Sort
+    /* Stream Counting Sort
      * The same as method {@link CountingSort#sort(List)} } but this method uses stream API
-     *
      * @param list The list to be sorted
-     **/
+    */
     private static <T extends Comparable<T>> List<T> streamSort(List<T> list) {
         return list.stream()
                 .collect(toMap(k -> k, v -> 1, (v1, v2) -> v1 + v2, TreeMap::new))
