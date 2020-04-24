@@ -9,8 +9,6 @@ import static java.lang.String.format;
 
 /**
  *
- *
- *
  * Binary search is one of the most popular algorithms
  * The algorithm finds the position of a target value within a sorted array
  *
