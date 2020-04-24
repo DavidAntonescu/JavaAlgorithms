@@ -1,10 +1,6 @@
 package ciphers;
 
-/**
- * A Java implementation of Vigenere Cipher.
- * @author  straiffix
- */
-
+/*A Java implementation of Vigenere Cipher.*/
 
 public class Vigenere  {
 
