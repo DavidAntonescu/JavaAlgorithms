@@ -6,15 +6,9 @@ public class Factorial {
         int n = 5;
         System.out.println(n + "! = " + factorial(n));
     }
-
     //Factorial = n! = n1 * (n-1) * (n-2)*...1
 
-    /**
-     * Calculate factorial N
-     *
-     * @param n the number
-     * @return the factorial of {@code n}
-     */
+    /*Calculate factorial N*/
     public static long factorial(int n) {
         if (n < 0) {
             throw new ArithmeticException("n < 0");     //Dont work with less than 0
