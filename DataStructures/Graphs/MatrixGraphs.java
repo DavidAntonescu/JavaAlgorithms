@@ -80,14 +80,7 @@ class AdjacencyMatrixGraph {
         return false;
     }
 
-    /**
-     * This method adds an edge to the graph between two specified
-     * vertices
-     *
-     * @param from the data of the vertex the edge is from
-     * @param to   the data of the vertex the edge is going to
-     * @return returns true if the edge did not exist, return false if it already did
-     */
+    /*This method adds an edge to the graph between two specified vertices*/
     public boolean addEdge(int from, int to) {
         if (this.vertexDoesExist(from) && this.vertexDoesExist(to)) {
             if (!this.adjacencyOfEdgeDoesExist(from, to)) {
@@ -101,14 +94,7 @@ class AdjacencyMatrixGraph {
         return false;
     }
 
-    /**
-     * this method removes an edge from the graph between two specified
-     * vertices
-     *
-     * @param from the data of the vertex the edge is from
-     * @param to   the data of the vertex the edge is going to
-     * @return returns false if the edge doesn't exist, returns true if the edge exists and is removed
-     */
+    /*This method removes an edge from the graph between two specified vertices*/
     public boolean removeEdge(int from, int to) {
         if (!this.vertexDoesExist(from) || !this.vertexDoesExist(to)) {
             if (this.adjacencyOfEdgeDoesExist(from, to)) {
@@ -121,11 +107,7 @@ class AdjacencyMatrixGraph {
         return false;
     }
 
-    /**
-     * this gives a list of vertices in the graph and their adjacencies
-     *
-     * @return returns a string describing this graph
-     */
+    /*This gives a list of vertices in the graph and their adjacencies*/
     public String toString() {
         String s = new String();
         s = "    ";
