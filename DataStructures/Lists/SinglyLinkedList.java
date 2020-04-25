@@ -1,70 +1,45 @@
 package DataStructures.Lists;
 
-/**
- * This class implements a SinglyLinked List. This is done
+/*This class implements a SinglyLinked List. This is done
  * using SinglyLinkedList class and a LinkForLinkedList Class.
- * <p>
  * A linked list is similar to an array, it hold values.
  * However, links in a linked list do not have indexes. With
  * a linked list you do not need to predetermine it's size as
  * it grows and shrinks as it is edited. This is an example of
  * a singly linked list. Elements can only be added/removed
  * at the head/front of the list.
- */
+*/
 public class SinglyLinkedList {
-    /**
-     * Head refer to the front of the list
-     */
+    
+    /*Head refer to the front of the list*/
     private Node head;
 
-    /**
-     * size of SinglyLinkedList
-     */
+    /*size of SinglyLinkedList*/
     private int size;
 
-    /**
-     * init SinglyLinkedList
-     */
+    /*init SinglyLinkedList*/
     public SinglyLinkedList() {
         head = new Node(0);
         size = 0;
     }
 
-    /**
-     * Init SinglyLinkedList with specified head node and size
-     *
-     * @param head the head node of list
-     * @param size the size of list
-     */
+    /*Init SinglyLinkedList with specified head node and size*/
     public SinglyLinkedList(Node head, int size) {
         this.head = head;
         this.size = size;
     }
 
-    /**
-     * This method inserts an element at the head
-     *
-     * @param x Element to be added
-     */
+    /*This method inserts an element at the head*/
     public void insertHead(int x) {
         insertNth(x, 0);
     }
 
-    /**
-     * insert an element at the tail of list
-     *
-     * @param data Element to be added
-     */
+    /*insert an element at the tail of list*/
     public void insert(int data) {
         insertNth(data, size);
     }
 
-    /**
-     * Inserts a new node at a specified position
-     *
-     * @param data     data to be stored in a new node
-     * @param position position at which a new node is to be inserted
-     */
+    /*Inserts a new node at a specified position*/
     public void insertNth(int data, int position) {
         checkBounds(position, 0, size);
         Node cur = head;
@@ -77,11 +52,7 @@ public class SinglyLinkedList {
         size++;
     }
 
-    /**
-     * Insert element to list, always sorted
-     *
-     * @param data to be inserted
-     */
+    /*Insert element to list, always sorted*/
     public void insertSorted(int data) {
         Node cur = head;
         while (cur.next != null && data > cur.next.value) {
@@ -94,25 +65,17 @@ public class SinglyLinkedList {
         size++;
     }
 
-    /**
-     * This method deletes an element at the head
-     *
-     * @return The element deleted
-     */
+    /*This method deletes an element at the head */
     public void deleteHead() {
         deleteNth(0);
     }
 
-    /**
-     * This method deletes an element at the tail
-     */
+    /*This method deletes an element at the tail*/
     public void delete() {
         deleteNth(size - 1);
     }
 
-    /**
-     * This method deletes an element at Nth position
-     */
+    /*This method deletes an element at Nth position*/
     public void deleteNth(int position) {
         checkBounds(position, 0, size - 1);
         Node cur = head;
@@ -127,21 +90,13 @@ public class SinglyLinkedList {
         size--;
     }
 
-    /**
-     * @param position to check position
-     * @param low      low index
-     * @param high     high index
-     * @throws IndexOutOfBoundsException if {@code position} not in range {@code low} to {@code high}
-     */
     public void checkBounds(int position, int low, int high) {
         if (position > high || position < low) {
             throw new IndexOutOfBoundsException(position + "");
         }
     }
 
-    /**
-     * clear all nodes in list
-     */
+    /*clears all nodes in the list*/
     public void clear() {
         if (size == 0) {
             return;
@@ -158,18 +113,12 @@ public class SinglyLinkedList {
         size = 0;
     }
 
-    /**
-     * Checks if the list is empty
-     *
-     * @return true is list is empty
-     */
+    /*Checks if the list is empty*/
     public boolean isEmpty() {
         return size == 0;
     }
 
-    /**
-     * Returns the size of the linked list
-     */
+    /* Returns the size of the linked list*/
     public int size() {
         return size;
     }
@@ -188,13 +137,7 @@ public class SinglyLinkedList {
         return builder.replace(builder.length() - 2, builder.length(), "").toString();
     }
 
-    /**
-     * Merge two sorted SingleLinkedList
-     *
-     * @param listA the first sorted list
-     * @param listB the second sored list
-     * @return merged sorted list
-     */
+    /*Merge two sorted SingleLinkedList*/
     public static SinglyLinkedList merge(SinglyLinkedList listA, SinglyLinkedList listB) {
         Node headA = listA.head.next;
         Node headB = listB.head.next;
@@ -222,11 +165,7 @@ public class SinglyLinkedList {
         return new SinglyLinkedList(head, size);
     }
 
-    /**
-     * Main method
-     *
-     * @param args Command line arguments
-     */
+    /*Main method*/
     public static void main(String args[]) {
         SinglyLinkedList myList = new SinglyLinkedList();
         assert myList.isEmpty();
@@ -264,31 +203,21 @@ public class SinglyLinkedList {
     }
 }
 
-/**
- * This class is the nodes of the SinglyLinked List.
- * They consist of a value and a pointer to the node
- * after them.
- */
+/*This class is the nodes of the SinglyLinked List.
+ *They consist of a value and a pointer to the node after them.*/
 class Node {
-    /**
-     * The value of the node
-     */
+    
+    /*The value of the node*/
     int value;
 
-    /**
-     * Point to the next node
-     */
+    /*Point to the next node*/
     Node next;
 
     Node() {
 
     }
 
-    /**
-     * Constructor
-     *
-     * @param value Value to be put in the node
-     */
+    /*Constructor*/
     Node(int value) {
         this(value, null);
     }
