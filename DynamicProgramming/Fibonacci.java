@@ -4,9 +4,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-/**
- * @author Varun Upadhyay (https://github.com/varunu28)
- */
 
 public class Fibonacci {
 
@@ -25,12 +22,7 @@ public class Fibonacci {
         sc.close();
     }
 
-    /**
-     * This method finds the nth fibonacci number using memoization technique
-     *
-     * @param n The input n for which we have to determine the fibonacci number
-     *          Outputs the nth fibonacci number
-     **/
+    /*This method finds the nth fibonacci number using memoization technique*/
     public static int fibMemo(int n) {
         if (map.containsKey(n)) {
             return map.get(n);
@@ -47,12 +39,7 @@ public class Fibonacci {
         return f;
     }
 
-    /**
-     * This method finds the nth fibonacci number using bottom up
-     *
-     * @param n The input n for which we have to determine the fibonacci number
-     *          Outputs the nth fibonacci number
-     **/
+    /*This method finds the nth fibonacci number using bottom up*/
     public static int fibBotUp(int n) {
 
         Map<Integer, Integer> fib = new HashMap<>();
@@ -71,20 +58,7 @@ public class Fibonacci {
     }
 
 
-    /**
-     * This method finds the nth fibonacci number using bottom up
-     *
-     * @param n The input n for which we have to determine the fibonacci number
-     *          Outputs the nth fibonacci number
-     *          <p>
-     *          This is optimized version of Fibonacci Program. Without using Hashmap and recursion.
-     *          It saves both memory and time.
-     *          Space Complexity will be O(1)
-     *          Time Complexity will be O(n)
-     *          <p>
-     *          Whereas , the above functions will take O(n) Space.
-     * @author Shoaib Rayeen (https://github.com/shoaibrayeen)
-     **/
+    /*This method finds the nth fibonacci number using bottom up*/
     public static int fibOptimized(int n) {
         if (n == 0) {
             return 0;
