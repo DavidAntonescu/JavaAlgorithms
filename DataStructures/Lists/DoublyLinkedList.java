@@ -1,43 +1,22 @@
 package DataStructures.Lists;
 
-/**
- * This class implements a DoublyLinkedList. This is done using the classes
- * LinkedList and Link.
- * <p>
- * A linked list is similar to an array, it holds values. However,
- * links in a linked list do not have indexes. With a linked list
- * you do not need to predetermine it's size as it grows and shrinks
- * as it is edited. This is an example of a double ended, doubly
- * linked list. Each link references the next link and the previous
- * one.
- *
- * @author Unknown
- */
 
+/*This class implements a DoublyLinkedList. This is done using the classes LinkedList and Link.*/
 public class DoublyLinkedList {
-    /**
-     * Head refers to the front of the list
-     */
+    
+    /*Head refers to the front of the list*/
     private Link head;
-    /**
-     * Tail refers to the back of the list
-     */
+    
+    /*Tail refers to the back of the list*/
     private Link tail;
 
-    /**
-     * Default Constructor
-     */
+    /*Default Constructor*/
     public DoublyLinkedList() {
         head = null;
         tail = null;
     }
 
-    /**
-     * Constructs a list containing the elements of the array
-     *
-     * @param array the array whose elements are to be placed into this list
-     * @throws NullPointerException if the specified collection is null
-     */
+    /*Constructs a list containing the elements of the array*/
     public DoublyLinkedList(int[] array) {
         if (array == null) throw new NullPointerException();
         for (int i : array) {
@@ -45,11 +24,7 @@ public class DoublyLinkedList {
         }
     }
 
-    /**
-     * Insert an element at the head
-     *
-     * @param x Element to be inserted
-     */
+    /*Insert an element at the head*/
     public void insertHead(int x) {
         Link newLink = new Link(x); // Create a new link with a value attached to it
         if (isEmpty()) // Set the first element added to be the tail
@@ -60,11 +35,7 @@ public class DoublyLinkedList {
         head = newLink; // newLink(head) <--> oldhead
     }
 
-    /**
-     * Insert an element at the tail
-     *
-     * @param x Element to be inserted
-     */
+    /*Insert an element at the tail*/
     public void insertTail(int x) {
         Link newLink = new Link(x);
         newLink.next = null; // currentTail(tail)     newlink -->
@@ -78,11 +49,7 @@ public class DoublyLinkedList {
         }
     }
 
-    /**
-     * Delete the element at the head
-     *
-     * @return The new head
-     */
+    /*Delete the element at the head*/
     public Link deleteHead() {
         Link temp = head;
         head = head.next; // oldHead <--> 2ndElement(head)
@@ -92,11 +59,7 @@ public class DoublyLinkedList {
         return temp;
     }
 
-    /**
-     * Delete the element at the tail
-     *
-     * @return The new tail
-     */
+    /*Delete the element at the tail*/
     public Link deleteTail() {
         Link temp = tail;
         tail = tail.previous; // 2ndLast(tail) <--> oldTail --> null
@@ -107,12 +70,7 @@ public class DoublyLinkedList {
         return temp;
     }
 
-    /**
-     * Delete the element from somewhere in the list
-     *
-     * @param x element to be deleted
-     * @return Link deleted
-     */
+    /*Delete the element from somewhere in the list*/
     public void delete(int x) {
         Link current = head;
 
@@ -136,11 +94,7 @@ public class DoublyLinkedList {
         }
     }
 
-    /**
-     * Inserts element and reorders
-     *
-     * @param x Element to be added
-     */
+    /*Inserts element and reorders*/
     public void insertOrdered(int x) {
         Link newLink = new Link(x);
         Link current = head;
@@ -161,18 +115,12 @@ public class DoublyLinkedList {
         }
     }
 
-    /**
-     * Returns true if list is empty
-     *
-     * @return true if list is empty
-     */
+    /*Returns true if list is empty*/
     public boolean isEmpty() {
         return (head == null);
     }
 
-    /**
-     * Prints contents of the list
-     */
+    /*Prints contents of the list*/
     public void display() { // Prints contents of the list
         Link current = head;
         while (current != null) {
@@ -183,47 +131,29 @@ public class DoublyLinkedList {
     }
 }
 
-/**
- * This class is used to implement the nodes of the
- * linked list.
- *
- * @author Unknown
- */
+/*This class is used to implement the nodes of the linked list.*/
 class Link {
-    /**
-     * Value of node
-     */
+    
+    /*Value of node*/
     public int value;
-    /**
-     * This points to the link in front of the new link
-     */
+    
+    /*This points to the link in front of the new link*/
     public Link next;
-    /**
-     * This points to the link behind the new link
-     */
+    
+    /*This points to the link behind the new link*/
     public Link previous;
 
-    /**
-     * Constructor
-     *
-     * @param value Value of node
-     */
+    /*Constructor*/
     public Link(int value) {
         this.value = value;
     }
 
-    /**
-     * Displays the node
-     */
+    /*Displays the node*/
     public void displayLink() {
         System.out.print(value + " ");
     }
 
-    /**
-     * Main Method
-     *
-     * @param args Command line arguments
-     */
+    /*Main Method*/
     public static void main(String args[]) {
         DoublyLinkedList myList = new DoublyLinkedList();
         myList.insertHead(13);
