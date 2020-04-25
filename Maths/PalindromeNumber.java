@@ -8,12 +8,7 @@ public class PalindromeNumber {
         assert isPalindrome(1);
     }
 
-    /**
-     * Check if {@code n} is palindrome number or not
-     *
-     * @param number the number
-     * @return {@code true} if {@code n} is palindrome number, otherwise {@code false}
-     */
+    /* Checks if n is a palindrome number or not*/
     public static boolean isPalindrome(int number) {
         if (number < 0) {
             throw new IllegalArgumentException(number + "");
