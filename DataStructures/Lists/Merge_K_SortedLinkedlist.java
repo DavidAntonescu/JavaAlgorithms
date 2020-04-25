@@ -4,18 +4,11 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.PriorityQueue;
 
-/**
- * @author Arun Pandey (https://github.com/pandeyarun709)
- */
+
 public class Merge_K_SortedLinkedlist {
 
-    /**
-     * This function merge K sorted LinkedList
-     *
-     * @param a array of LinkedList
-     * @param N size of array
-     * @return node
-     */
+    
+    /*This function merge K sorted LinkedList*/
     Node mergeKList(Node[] a, int N) {
         // Min Heap
         PriorityQueue<Node> min = new PriorityQueue<>(Comparator.comparingInt(x -> x.data));
