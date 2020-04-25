@@ -12,12 +12,10 @@ public class CountChar {
         System.out.println("There are " + CountCharacters(str) + " characters.");
     }
 
-    /**
-     * Count non space character in string
-     *
+    /* Count non space character in string
      * @param str String to count the characters
      * @return number of character in the specified string
-     */
+    */
     private static int CountCharacters(String str) {
         return str.replaceAll("\\s", "").length();
     }
