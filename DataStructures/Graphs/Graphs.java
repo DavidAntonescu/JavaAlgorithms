@@ -43,14 +43,7 @@ class AdjacencyListGraph<E extends Comparable<E>> {
         }
     }
 
-    /**
-     * this method removes an edge from the graph between two specified
-     * verticies
-     *
-     * @param from the data of the vertex the edge is from
-     * @param to   the data of the vertex the edge is going to
-     * @return returns false if the edge doesn't exist, returns true if the edge exists and is removed
-     */
+    /*This method removes an edge from the graph between two specified verticies*/
     public boolean removeEdge(E from, E to) {
         Vertex fromV = null;
         for (Vertex v : verticies) {
@@ -63,14 +56,7 @@ class AdjacencyListGraph<E extends Comparable<E>> {
         return fromV.removeAdjacentVertex(to);
     }
 
-    /**
-     * this method adds an edge to the graph between two specified
-     * verticies
-     *
-     * @param from the data of the vertex the edge is from
-     * @param to   the data of the vertex the edge is going to
-     * @return returns true if the edge did not exist, return false if it already did
-     */
+    /*This method adds an edge to the graph between two specified verticies*/
     public boolean addEdge(E from, E to) {
         Vertex fromV = null, toV = null;
         for (Vertex v : verticies) {
@@ -92,11 +78,7 @@ class AdjacencyListGraph<E extends Comparable<E>> {
         return fromV.addAdjacentVertex(toV);
     }
 
-    /**
-     * this gives a list of verticies in the graph and their adjacencies
-     *
-     * @return returns a string describing this graph
-     */
+    /*This gives a list of verticies in the graph and their adjacencies*/
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
