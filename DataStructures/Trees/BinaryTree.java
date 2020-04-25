@@ -1,30 +1,20 @@
 package DataStructures.Trees;
 
-/**
- * This entire class is used to build a Binary Tree data structure.
+/* This entire class is used to build a Binary Tree data structure.
  * There is the Node Class and the Tree Class, both explained below.
- */
+*/
 
 
-/**
- * A binary tree is a data structure in which an element
+/* A binary tree is a data structure in which an element
  * has two successors(children). The left child is usually
  * smaller than the parent, and the right child is usually
- * bigger.
- *
- * @author Unknown
- *
- */
+ * bigger.*/
 public class BinaryTree {
 
-    /**
-     * This class implements the nodes that will go on the Binary Tree.
+    /* This class implements the nodes that will go on the Binary Tree.
      * They consist of the data in them, the node to the left, the node
      * to the right, and the parent from which they came from.
-     *
-     * @author Unknown
-     *
-     */
+    */
     class Node {
         /** Data for the node */
         public int data;
