@@ -2,20 +2,10 @@ package Conversions;
 
 import java.util.*;
 
-/**
- * Converts any Binary Number to a Hexadecimal Number
- *
- * @author Nishita Aggarwal
- */
+
 public class BinaryToHexadecimal {
 
-    /**
-     * This method converts a binary number to
-     * a hexadecimal number.
-     *
-     * @param binary The binary number
-     * @return The hexadecimal number
-     */
+    /* This method converts a binary number to a hexadecimal number.*/
     static String binToHex(int binary) {
         //hm to store hexadecimal codes for binary numbers within the range: 0000 to 1111 i.e. for decimal numbers 0 to 15
         HashMap<Integer, String> hm = new HashMap<>();
@@ -39,11 +29,7 @@ public class BinaryToHexadecimal {
         return hex;
     }
 
-    /**
-     * Main method
-     *
-     * @param args Command line arguments
-     */
+    /*Main method*/
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter binary number:");
