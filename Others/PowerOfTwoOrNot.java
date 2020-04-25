@@ -2,10 +2,7 @@ package Others;
 
 import java.util.Scanner;
 
-/**
- * A utility to check if a given number is power of two or not.
- * For example 8,16 etc.
- */
+/*A utility to check if a given number is power of two or not.*/
 
 public class PowerOfTwoOrNot {
 
@@ -24,12 +21,10 @@ public class PowerOfTwoOrNot {
     }
 
 
-    /**
-     * Checks whether given number is power of two or not.
-     *
+    /* Checks whether given number is power of two or not.
      * @param number
      * @return boolean
-     */
+    */
     public static boolean checkIfPowerOfTwoOrNot(int number) {
         return number != 0 && ((number & (number - 1)) == 0);
     }
