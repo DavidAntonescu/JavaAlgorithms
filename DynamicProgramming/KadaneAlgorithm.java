@@ -2,22 +2,11 @@ package DynamicProgramming;
 
 import java.util.Scanner;
 
-/**
- * Program to implement Kadane’s Algorithm to
- * calculate maximum contiguous subarray sum of an array
- * Time Complexity: O(n)
- *
- * @author Nishita Aggarwal
- */
 
+/* Program to implement Kadane’s Algorithm to*/
 public class KadaneAlgorithm {
 
-    /**
-     * This method implements Kadane's Algorithm
-     *
-     * @param arr The input array
-     * @return The maximum contiguous subarray sum of the array
-     */
+    /*his method implements Kadane's Algorithm*/
     static int largestContiguousSum(int arr[]) {
         int i, len = arr.length, cursum = 0, maxsum = Integer.MIN_VALUE;
         if (len == 0)    //empty array
@@ -34,11 +23,7 @@ public class KadaneAlgorithm {
         return maxsum;
     }
 
-    /**
-     * Main method
-     *
-     * @param args Command line arguments
-     */
+    /*Main method*/
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n, arr[], i;
