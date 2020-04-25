@@ -8,13 +8,7 @@ public class ParseInteger {
         assert parseInt("+123") == Integer.parseInt("+123");
     }
 
-    /**
-     * Parse a string to integer
-     *
-     * @param s the string
-     * @return the integer value represented by the argument in decimal.
-     * @throws NumberFormatException if the {@code string} does not contain a parsable integer.
-     */
+    /*Parses a string to an integer */
     public static int parseInt(String s) {
         if (s == null) {
             throw new NumberFormatException("null");
