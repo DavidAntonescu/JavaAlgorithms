@@ -3,10 +3,6 @@ package Others;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
-/**
- * @author Varun Upadhyay (https://github.com/varunu28)
- */
-
 public class RemoveDuplicateFromString {
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -18,14 +14,12 @@ public class RemoveDuplicateFromString {
         br.close();
     }
 
-    /**
-     * This method produces a string after removing all the duplicate characters from input string and returns it
+    /* This method produces a string after removing all the duplicate characters from input string and returns it
      * Example: Input String - "aabbbccccddddd"
      * Output String - "abcd"
-     *
      * @param s String from which duplicate characters have to be removed
      * @return string with only unique characters
-     */
+    */
 
     public static String removeDuplicate(String s) {
         if (s == null || s.isEmpty()) {
