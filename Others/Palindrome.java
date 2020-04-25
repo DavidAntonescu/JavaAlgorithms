@@ -23,13 +23,11 @@ class Palindrome {
         return SecondWay(x.substring(1, x.length() - 1));
     }
 
-    /**
-     * This method ignores all non-alphanumeric characters and case runs in O(n)
-     * where n is the length of s
-     * 
+    /* This method ignores all non-alphanumeric characters and case runs in O(n) where n is the length of s
      * @param s String to check
      * @return true if s is palindrome else false
-     */
+    */
+    
     public boolean isPalindrome(String s) {
         s = s.toLowerCase().trim();
         StringBuilder sb = new StringBuilder();
