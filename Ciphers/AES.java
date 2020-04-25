@@ -170,11 +170,7 @@ public class AES {
 			0x01, 0x13, 0x1d, 0x47, 0x49, 0x5b, 0x55, 0x7f, 0x71, 0x63, 0x6d, 0xd7, 0xd9, 0xcb, 0xc5, 0xef, 0xe1, 0xf3,
 			0xfd, 0xa7, 0xa9, 0xbb, 0xb5, 0x9f, 0x91, 0x83, 0x8d };
 
-	/*Subroutine of the Rijndael key expansion.
-	 * @param t
-	 * @param rconCounter
-	 * @return*/
-	
+	/*Subroutine of the Rijndael key expansion.*/
 	public static BigInteger scheduleCore(BigInteger t, int rconCounter) {
 		String rBytes = t.toString(16);
 
@@ -218,11 +214,7 @@ public class AES {
 		return new BigInteger(rBytes, 16);
 	}
 
-	/*Returns an array of 10 + 1 round keys that are calculated by using Rijndael
-	 * key schedule
-	 * @param initialKey
-	 * @return array of 10 + 1 round keys
-	 */
+	/*Returns an array of 10 + 1 round keys that are calculated by using Rijndael*/
 	public static BigInteger[] keyExpansion(BigInteger initialKey) {
 		BigInteger[] roundKeys = { initialKey, new BigInteger("0"), new BigInteger("0"), new BigInteger("0"),
 				new BigInteger("0"), new BigInteger("0"), new BigInteger("0"), new BigInteger("0"), new BigInteger("0"),
@@ -264,10 +256,7 @@ public class AES {
 		return roundKeys;
 	}
 
-	/*representation of the input 128-bit block as an array of 8-bit integers.
-	 * @param block of 128-bit integers
-	 * @return array of 8-bit integers*/
-	
+	/*representation of the input 128-bit block as an array of 8-bit integers.*/
 	public static int[] splitBlockIntoCells(BigInteger block) {
 
 		int[] cells = new int[16];
@@ -287,10 +276,7 @@ public class AES {
 		return cells;
 	}
 
-	/*Returns the 128-bit BigInteger representation of the input of an array of 8-bit integers.
-	 *@param cells that we need to merge
-	 *@return block of merged cells*/
-	
+	/*Returns the 128-bit BigInteger representation of the input of an array of 8-bit integers.*/
 	public static BigInteger mergeCellsIntoBlock(int[] cells) {
 
 		String blockBits = "";
@@ -307,18 +293,12 @@ public class AES {
 
 		return new BigInteger(blockBits, 2);
 	}
-
-	/*@param ciphertext
-	 *@param key
-	 *@return ciphertext XOR key*/
 	
 	public static BigInteger addRoundKey(BigInteger ciphertext, BigInteger key) {
 		return ciphertext.xor(key);
 	}
 
-	/*substitutes 8-Bit long substrings of the input using the S-Box and returns the result.
-	 *@param ciphertext
-	 *@return subtraction Output*/
+	/*substitutes 8-Bit long substrings of the input using the S-Box and returns the result.*/
 	public static BigInteger subBytes(BigInteger ciphertext) {
 
 		int[] cells = splitBlockIntoCells(ciphertext);
@@ -330,10 +310,7 @@ public class AES {
 		return mergeCellsIntoBlock(cells);
 	}
 
-	/*substitutes 8-Bit long substrings of the input using the inverse S-Box for decryption and returns the result.
-	 *@param ciphertext
-	 *@return subtraction Output*/
-	
+	/*substitutes 8-Bit long substrings of the input using the inverse S-Box for decryption and returns the result.*/
 	public static BigInteger subBytesDec(BigInteger ciphertext) {
 
 		int[] cells = splitBlockIntoCells(ciphertext);
@@ -345,9 +322,7 @@ public class AES {
 		return mergeCellsIntoBlock(cells);
 	}
 
-	/*Cell permutation step. Shifts cells within the rows of the input and returns the result.
-	 *@param ciphertext*/
-	
+	/*Cell permutation step. Shifts cells within the rows of the input and returns the result.*/
 	public static BigInteger shiftRows(BigInteger ciphertext) {
 		int[] cells = splitBlockIntoCells(ciphertext);
 		int[] output = new int[16];
@@ -379,9 +354,7 @@ public class AES {
 		return mergeCellsIntoBlock(output);
 	}
 
-	/*Cell permutation step for decryption . Shifts cells within the rows of the input and returns the result.
-	 *@param ciphertext*/
-	
+	/*Cell permutation step for decryption . Shifts cells within the rows of the input and returns the result.*/	
 	public static BigInteger shiftRowsDec(BigInteger ciphertext) {
 		int[] cells = splitBlockIntoCells(ciphertext);
 		int[] output = new int[16];
@@ -413,9 +386,7 @@ public class AES {
 		return mergeCellsIntoBlock(output);
 	}
 
-	/*Applies the Rijndael MixColumns to the input and returns the result.
-	 *@param ciphertext*/
-	
+	/*Applies the Rijndael MixColumns to the input and returns the result.*/
 	public static BigInteger mixColumns(BigInteger ciphertext) {
 
 		int[] cells = splitBlockIntoCells(ciphertext);
@@ -432,9 +403,7 @@ public class AES {
 		return mergeCellsIntoBlock(outputCells);
 	}
 
-	/*Applies the inverse Rijndael MixColumns for decryption to the input and returns the result.
-	 * @param ciphertext*/
-	
+	/*Applies the inverse Rijndael MixColumns for decryption to the input and returns the result.*/
 	public static BigInteger mixColumnsDec(BigInteger ciphertext) {
 
 		int[] cells = splitBlockIntoCells(ciphertext);
@@ -451,13 +420,7 @@ public class AES {
 		return mergeCellsIntoBlock(outputCells);
 	}
 
-	/*Encrypts the plaintext with the key and returns the result
-	 *@param plainText
-	 *which we want to encrypt
-	 *@param key
-	 *the key for encrypt
-	 *@return EncryptedText*/
-	
+	/*Encrypts the plaintext with the key and returns the result*/
 	public static BigInteger encrypt(BigInteger plainText, BigInteger key) {
 		BigInteger[] roundKeys = keyExpansion(key);
 
@@ -480,12 +443,7 @@ public class AES {
 		return plainText;
 	}
 
-	/*Decrypts the ciphertext with the key and returns the result
-	 *@param cipherText
-	 *The Encrypted text which we want to decrypt
-	 *@param key
-	 *@return decryptedText*/
-	
+	/*Decrypts the ciphertext with the key and returns the result*/
 	public static BigInteger decrypt(BigInteger cipherText, BigInteger key) {
 
 		BigInteger[] roundKeys = keyExpansion(key);
