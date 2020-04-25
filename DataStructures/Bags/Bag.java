@@ -3,11 +3,7 @@ package DataStructures.Bags;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-/**
- * Collection which does not allow removing elements (only collect and iterate)
- *
- * @param <Element> - the generic type of an element in this bag
- */
+/*Collection which does not allow removing elements (only collect and iterate)*/
 public class Bag<Element> implements Iterable<Element> {
 
     private Node<Element> firstElement; // first element of the bag
@@ -18,31 +14,23 @@ public class Bag<Element> implements Iterable<Element> {
         private Node<Element> nextElement;
     }
 
-    /**
-     * Create an empty bag
-     */
+    /*Create an empty bag*/
     public Bag() {
         firstElement = null;
         size = 0;
     }
 
-    /**
-     * @return true if this bag is empty, false otherwise
-     */
+    /*Returns true if this bag is empty, false otherwise*/
     public boolean isEmpty() {
         return firstElement == null;
     }
 
-    /**
-     * @return the number of elements
-     */
+    /*Returns the number of elements*/
     public int size() {
         return size;
     }
 
-    /**
-     * @param element - the element to add
-     */
+    /*the element to add*/
     public void add(Element element) {
         Node<Element> oldfirst = firstElement;
         firstElement = new Node<>();
@@ -51,12 +39,8 @@ public class Bag<Element> implements Iterable<Element> {
         size++;
     }
 
-    /**
-     * Checks if the bag contains a specific element
-     *
-     * @param element which you want to look for
-     * @return true if bag contains element, otherwise false
-     */
+    /*Checks if the bag contains a specific element
+     *returns true if bag contains element, otherwise false*/
     public boolean contains(Element element) {
         Iterator<Element> iterator = this.iterator();
         while (iterator.hasNext()) {
@@ -67,9 +51,7 @@ public class Bag<Element> implements Iterable<Element> {
         return false;
     }
 
-    /**
-     * @return an iterator that iterates over the elements in this bag in arbitrary order
-     */
+    /*Returns an iterator that iterates over the elements in this bag in arbitrary order*/
     public Iterator<Element> iterator() {
         return new ListIterator<>(firstElement);
     }
@@ -86,9 +68,7 @@ public class Bag<Element> implements Iterable<Element> {
             return currentElement != null;
         }
 
-        /**
-         * remove is not allowed in a bag
-         */
+        /*removing is not allowed in a bag*/
         @Override
         public void remove() {
             throw new UnsupportedOperationException();
@@ -103,9 +83,7 @@ public class Bag<Element> implements Iterable<Element> {
         }
     }
 
-    /**
-     * main-method for testing
-     */
+    /*main-method for testing*/
     public static void main(String[] args) {
         Bag<String> bag = new Bag<>();
 
