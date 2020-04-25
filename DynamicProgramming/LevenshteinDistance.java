@@ -1,10 +1,7 @@
 package DynamicProgramming;
 
-/**
- * @author Kshitij VERMA (github.com/kv19971)
- * LEVENSHTEIN DISTANCE dyamic programming implementation to show the difference between two strings (https://en.wikipedia.org/wiki/Levenshtein_distance)
- */
 
+/*LEVENSHTEIN DISTANCE is a dyamic programming implementation to show the difference between two strings (https://en.wikipedia.org/wiki/Levenshtein_distance)*/
 public class LevenshteinDistance {
     private static int minimum(int a, int b, int c) {
         if (a < b && a < c) {
