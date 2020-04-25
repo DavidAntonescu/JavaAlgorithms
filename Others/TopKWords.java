@@ -3,9 +3,6 @@ package Others;
 import java.io.*;
 import java.util.*;
 
-/* display the most frequent K words in the file and the times it appear
-    in the file – shown in order (ignore case and periods) */
-
 public class TopKWords {
     static class CountWords {
         private String fileName;
@@ -85,4 +82,3 @@ public class TopKWords {
         input.close();
     }
 }
-
