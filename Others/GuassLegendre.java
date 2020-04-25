@@ -2,12 +2,9 @@ package Others;
 
 import java.lang.Math;
 
-/**
- * Guass Legendre Algorithm
- * ref https://en.wikipedia.org/wiki/Gauss–Legendre_algorithm
- *
- * @author AKS1996
- */
+/*Guass Legendre Algorithm
+ *For more information read https://en.wikipedia.org/wiki/Gauss–Legendre_algorithm*/
+
 public class GuassLegendre {
 
     public static void main(String[] args) {
