@@ -2,20 +2,15 @@ package Others;
 
 import java.util.ArrayList;
 
-/**
- * @author Dekas Dimitrios
- */
 public class FirstFit {
     private static final int NO_ALLOCATION = -255; // if a process has been allocated in position -255,
                                                    // it means that it has not been actually allocated.
 
-    /**
-     * Method to find the index of the memory block that is going to fit the given process based on the first fit algorithm.
-     *
+    /* Method to find the index of the memory block that is going to fit the given process based on the first fit algorithm.
      * @param blocks: the array with the available memory blocks.
      * @param process: the size of the process.
      * @return the index of the block that fits, or -255 if no such block exists.
-     */
+    */
     private static int findFirstFit(int[] blockSizes, int processSize) {
         for(int i=0 ; i < blockSizes.length ; i++) {
             if(blockSizes[i] >= processSize) {
@@ -26,12 +21,10 @@ public class FirstFit {
         return NO_ALLOCATION;
     }
 
-    /**
-     * Method to allocate memory to blocks according to the first fit
+    /* Method to allocate memory to blocks according to the first fit
      * algorithm. It should return an ArrayList of Integers, where the
      * index is the process ID (zero-indexed) and the value is the block
      * number (also zero-indexed).
-     *
      * @param sizeOfBlocks: an int array that contains the sizes of the memory blocks available.
      * @param sizeOfProcesses: an int array that contains the sizes of the processes we need memory blocks for.
      * @return the ArrayList filled with Integers repressenting the memory allocation that took place.
@@ -50,11 +43,10 @@ public class FirstFit {
         return memAlloc;
     }
 
-    /**
-     * Method to print the memory allocated.
-     *
+    /*Method to print the memory allocated.
      * @param memAllocation: an ArrayList of Integer representing the memory allocation done by the firstFit method.
-     */
+    */
+    
     public static void printMemoryAllocation(ArrayList<Integer> memAllocation) {
         System.out.println("Process No.\tBlock No.");
         System.out.println("===========\t=========");
