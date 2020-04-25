@@ -16,11 +16,7 @@ public class PrimeCheck {
         scanner.close();
     }
 
-    /***
-     * Checks if a number is prime or not
-     * @param n the number
-     * @return {@code true} if {@code n} is prime
-     */
+    /*Checks if a number is prime or not*/
     public static boolean isPrime(int n) {
         if (n == 2) {
             return true;
