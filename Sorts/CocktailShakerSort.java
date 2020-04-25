@@ -1,10 +1,5 @@
 package Sorts;
 
-/*Thanks to:
- * Mateus Bizzo (https://github.com/MattBizzo)
- * Podshivalov Nikita (https://github.com/nikitap492)
- */
-
 class CocktailShakerSort implements SortAlgorithm {
 
     /* This method implements the Generic Cocktail Shaker Sort
