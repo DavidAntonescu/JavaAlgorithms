@@ -8,12 +8,7 @@ public class FindMin {
         System.out.println("min = " + findMin(array));
     }
 
-    /**
-     * Find the minimum number of an array of numbers.
-     *
-     * @param array the array contains element
-     * @return min value
-     */
+    /*Find the minimum number of an array of numbers.*/
     public static int findMin(int[] array) {
         int min = array[0];
         for (int i = 1; i < array.length; ++i) {
