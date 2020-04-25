@@ -1,9 +1,7 @@
 package DynamicProgramming;
 
-/**
- * A DynamicProgramming based solution for 0-1 Knapsack problem
- */
 
+/*A DynamicProgramming based solution for 0-1 Knapsack problem*/
 public class Knapsack {
 
     private static int knapSack(int W, int wt[], int val[], int n) throws IllegalArgumentException {
