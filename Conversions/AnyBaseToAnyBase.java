@@ -5,19 +5,12 @@ import java.util.HashSet;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-/**
- * Class for converting from "any" base to "any" other base, when "any" means from 2-36.
+/* Class for converting from "any" base to "any" other base, when "any" means from 2-36.
  * Works by going from base 1 to decimal to base 2. Includes auxiliary method for
- * determining whether a number is valid for a given base.
- *
- * @author Michael Rolland
- * @version 2017.10.10
- */
+ * determining whether a number is valid for a given base.*/
 public class AnyBaseToAnyBase {
 
-    /**
-     * Smallest and largest base you want to accept as valid input
-     */
+    /*Smallest and largest base you want to accept as valid input*/
     static final int MINIMUM_BASE = 2;
     static final int MAXIMUM_BASE = 36;
 
@@ -78,15 +71,7 @@ public class AnyBaseToAnyBase {
         return true;
     }
 
-    /**
-     * Method to convert any integer from base b1 to base b2. Works by converting from b1 to decimal,
-     * then decimal to b2.
-     *
-     * @param n  The integer to be converted.
-     * @param b1 Beginning base.
-     * @param b2 End base.
-     * @return n in base b2.
-     */
+    /* Method to convert any integer from base b1 to base b2. Works by converting from b1 to decimal,then decimal to b2.*/
     public static String base2base(String n, int b1, int b2) {
         // Declare variables: decimal value of n,
         // character of base b1, character of base b2,
