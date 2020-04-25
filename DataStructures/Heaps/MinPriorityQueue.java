@@ -1,7 +1,6 @@
 package DataStructures.Heaps;
 
-/**
- * Minimum Priority Queue
+/* Minimum Priority Queue
  * It is a part of heap data structure
  * A heap is a specific tree based data structure
  * in which all the nodes of tree are in a specific order.
@@ -9,8 +8,6 @@ package DataStructures.Heaps;
  * respect of their parents, can either be greater
  * or less than the parent. This makes it a min priority queue
  * or max priority queue.
- * <p>
- * <p>
  * Functions: insert, delete, peek, isEmpty, print, heapSort, sink
  */
 public class MinPriorityQueue {
