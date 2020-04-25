@@ -2,18 +2,9 @@ package Conversions;
 
 import java.util.Scanner;
 
-/**
- * Converts any Hexadecimal Number to Octal
- *
- * @author Tanmay Joshi
- */
+/*Converts any Hexadecimal Number to Octal*/
 public class HexToOct {
-    /**
-     * This method converts a Hexadecimal number to a decimal number
-     *
-     * @param s The Hexadecimal Number
-     * @return The Decimal number
-     */
+    /*This method converts a Hexadecimal number to a decimal number*/
     public static int hex2decimal(String s) {
         String str = "0123456789ABCDEF";
         s = s.toUpperCase();
@@ -26,12 +17,7 @@ public class HexToOct {
         return val;
     }
 
-    /**
-     * This method converts a Decimal number to a octal number
-     *
-     * @param q The Decimal Number
-     * @return The Octal number
-     */
+    /*This method converts a Decimal number to a octal number*/
     public static int decimal2octal(int q) {
         int now;
         int i = 1;
@@ -46,10 +32,7 @@ public class HexToOct {
         return octnum;
     }
 
-    /**
-     * Main method that gets the hex input from user and converts it into octal.
-     * @param args arguments
-     */
+    /*Main method that gets the hex input from user and converts it into octal.*/
     public static void main(String args[]) {
         String hexadecnum;
         int decnum, octalnum;
