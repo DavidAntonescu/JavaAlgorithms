@@ -1,8 +1,7 @@
 package DynamicProgramming;
 
-/**
- * DynamicProgramming solution for the Egg Dropping Puzzle
- */
+
+/* DynamicProgramming solution for the Egg Dropping Puzzle*/
 public class EggDropping {
 
     // min trials with n eggs and m floors 
