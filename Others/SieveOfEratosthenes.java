@@ -1,16 +1,8 @@
 package Others;
 
-/**
- * @author Varun Upadhyay (https://github.com/varunu28)
- */
 public class SieveOfEratosthenes {
 
-    /**
-     * This method implements the Sieve of Eratosthenes Algorithm
-     *
-     * @param n The number till which we have to check for prime
-     *          Prints all the prime numbers till n
-     **/
+    /*This method implements the Sieve of Eratosthenes Algorithm*/
 
     public static void findPrimesTillN(int n) {
         int[] arr = new int[n + 1];
