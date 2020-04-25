@@ -1,35 +1,27 @@
 package Others;
 
-/***
- * A pseudorandom number generator.
- *
- * @author Tobias Carryer
- * @date October 10, 2017
- */
+/*A pseudorandom number generator.*/
+
 public class LinearCongruentialGenerator {
 
     private double a, c, m, previousValue;
 
-    /***
-     * These parameters are saved and used when nextNumber() is called.
+    /* These parameters are saved and used when nextNumber() is called.
      * The current timestamp in milliseconds is used as the seed.
-     *
      * @param multiplier
      * @param increment
      * @param modulo The maximum number that can be generated (exclusive). A common value is 2^32.
-     */
+    */
     public LinearCongruentialGenerator(double multiplier, double increment, double modulo) {
         this(System.currentTimeMillis(), multiplier, increment, modulo);
     }
 
-    /***
-     * These parameters are saved and used when nextNumber() is called.
-     *
+    /* These parameters are saved and used when nextNumber() is called.
      * @param seed
      * @param multiplier
      * @param increment
      * @param modulo The maximum number that can be generated (exclusive). A common value is 2^32.
-     */
+    */
     public LinearCongruentialGenerator(double seed, double multiplier, double increment, double modulo) {
         this.previousValue = seed;
         this.a = multiplier;
@@ -37,12 +29,10 @@ public class LinearCongruentialGenerator {
         this.m = modulo;
     }
 
-    /**
-     * The smallest number that can be generated is zero.
+    /* The smallest number that can be generated is zero.
      * The largest number that can be generated is modulo-1. modulo is set in the constructor.
-     *
      * @return a pseudorandom number.
-     */
+    */
     public double nextNumber() {
         previousValue = (a * previousValue + c) % m;
         return previousValue;
