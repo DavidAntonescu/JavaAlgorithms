@@ -11,12 +11,6 @@ public class FactorialRecursion {
         assert factorial(5) == 120;
     }
 
-    /**
-     * Recursive FactorialRecursion Method
-     *
-     * @param n The number to factorial
-     * @return The factorial of the number
-     */
     public static long factorial(int n) {
         if (n < 0) {
             throw new IllegalArgumentException("number is negative");
