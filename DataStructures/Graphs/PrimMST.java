@@ -1,9 +1,7 @@
 package DataStructures.Graphs;
 
-/**
- * A Java program for Prim's Minimum Spanning Tree (MST) algorithm.
- * adjacency matrix representation of the graph
- */
+/*A Java program for Prim's Minimum Spanning Tree (MST) algorithm.
+ * adjacency matrix representation of the graph*/
 class PrimMST {
     // Number of vertices in the graph
     private static final int V = 5;
