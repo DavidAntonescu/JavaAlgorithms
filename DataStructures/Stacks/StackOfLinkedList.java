@@ -2,9 +2,6 @@ package DataStructures.Stacks;
 
 import java.util.NoSuchElementException;
 
-/**
- * @author Varun Upadhyay (https://github.com/varunu28)
- */
 
 // An implementation of a Stack using a Linked List
 
@@ -42,38 +39,24 @@ class Node {
     }
 }
 
-/**
- * A class which implements a stack using a linked list
- * <p>
- * Contains all the stack methods : push, pop, printStack, isEmpty
- **/
+/*A class which implements a stack using a linked list
+ *Contains all the stack methods : push, pop, printStack, isEmpty*/
 
 class LinkedListStack {
 
-    /**
-     * Top of stack
-     */
+    /*Top of stack/
     Node head;
 
-    /**
-     * Size of stack
-     */
+    /*Size of stack*/
     private int size;
 
-    /**
-     * Init properties
-     */
+    /*Init properties*/
     public LinkedListStack() {
         head = null;
         size = 0;
     }
 
-    /**
-     * Add element at top
-     *
-     * @param x to be added
-     * @return <tt>true</tt> if add successfully
-     */
+    /*Add element at top*/
     public boolean push(int x) {
         Node newNode = new Node(x);
         newNode.next = head;
@@ -82,12 +65,7 @@ class LinkedListStack {
         return true;
     }
 
-    /**
-     * Pop element at top of stack
-     *
-     * @return element at top of stack
-     * @throws NoSuchElementException if stack is empty
-     */
+    /*Pop element at top of stack*/
     public int pop() {
         if (size == 0) {
             throw new NoSuchElementException("Empty stack. Nothing to pop");
@@ -100,12 +78,7 @@ class LinkedListStack {
         return retValue;
     }
 
-    /**
-     * Peek element at top of stack
-     *
-     * @return element at top of stack
-     * @throws NoSuchElementException if stack is empty
-     */
+    /* Peek element at top of stack*/
     public int peek() {
         if (size == 0) {
             throw new NoSuchElementException("Empty stack. Nothing to pop");
@@ -124,20 +97,12 @@ class LinkedListStack {
         return builder.replace(builder.length() - 2, builder.length(), "").toString();
     }
 
-    /**
-     * Check if stack is empty
-     *
-     * @return <tt>true</tt> if stack is empty, otherwise <tt>false</tt>
-     */
+    /*Check if stack is empty*/
     public boolean isEmpty() {
         return size == 0;
     }
 
-    /**
-     * Return size of stack
-     *
-     * @return size of stack
-     */
+    /*Return size of stack*/
     public int getSize() {
         return size;
     }
