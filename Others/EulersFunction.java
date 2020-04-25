@@ -1,8 +1,6 @@
 package Others;
 
-/* You can read more about Euler's totient function
- * See https://en.wikipedia.org/wiki/Euler%27s_totient_function
-*/
+/*Read https://en.wikipedia.org/wiki/Euler%27s_totient_function for more information*/
 
 public class EulersFunction {
     // This method returns us number of x that (x < n) and gcd(x, n) == 1 in O(sqrt(n)) time complexity;
