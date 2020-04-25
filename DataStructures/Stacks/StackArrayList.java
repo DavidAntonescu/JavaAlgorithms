@@ -2,24 +2,15 @@ package DataStructures.Stacks;
 
 import java.util.ArrayList;
 
-/**
- * This class implements a Stack using an ArrayList.
- * <p>
+/* This class implements a Stack using an ArrayList.
  * A stack is exactly what it sounds like. An element gets added to the top of
  * the stack and only the element on the top may be removed.
- * <p>
  * This is an ArrayList Implementation of a stack, where size is not
  * a problem we can extend the stack as much as we want.
- *
- * @author Unknown
  */
 public class StackArrayList {
 
-    /**
-     * Main method
-     *
-     * @param args Command line arguments
-     */
+    /*Main method*/
     public static void main(String[] args) {
         
         StackArrayList myStackArrayList = new StackArrayList();
@@ -37,34 +28,20 @@ public class StackArrayList {
         System.out.println(myStackArrayList.pop()); // will print 2
     }
 
-    /**
-     * ArrayList representation of the stack
-     */
+    /* ArrayList representation of the stack*/
     private ArrayList<Integer> stackList;
 
-    /**
-     * Constructor
-     */
+    /*Constructor*/
     public StackArrayList() {
         stackList = new ArrayList<>();
     }
 
-    /**
-     * Adds value to the end of list which
-     * is the top for stack
-     *
-     * @param value value to be added
-     */
+    /*Adds value to the end of list which is the top for stack*/
     public void push(int value) {
         stackList.add(value);
     }
 
-    /**
-     * Pops last element of list which is indeed
-     * the top for Stack
-     *
-     * @return Element popped
-     */
+    /* Pops last element of list which is indeed the top for Stack*/
     public int pop() {
 
         if (!isEmpty()) { // checks for an empty Stack
@@ -77,20 +54,12 @@ public class StackArrayList {
         return -1;
     }
 
-    /**
-     * Checks for empty Stack
-     *
-     * @return true if stack is empty
-     */
+    /*Checks for empty Stack*/
     public boolean isEmpty() {
         return stackList.isEmpty();
     }
 
-    /**
-     * Top element of stack
-     *
-     * @return top element of stack
-     */
+    /*Top element of stack*/
     public int peek() {
         return stackList.get(stackList.size() - 1);
     }
