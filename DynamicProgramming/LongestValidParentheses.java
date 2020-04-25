@@ -1,14 +1,10 @@
 package DynamicProgramming;
 
+
 import java.util.Scanner;
 
-/**
- * Given a string containing just the characters '(' and ')', find the length of
- * the longest valid (well-formed) parentheses substring.
- *
- * @author Libin Yang (https://github.com/yanglbme)
- * @since 2018/10/5
- */
+/* Given a string containing just the characters '(' and ')', find the length of
+ * the longest valid (well-formed) parentheses substring.*/
 
 public class LongestValidParentheses {
 
