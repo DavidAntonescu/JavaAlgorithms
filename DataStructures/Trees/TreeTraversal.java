@@ -2,10 +2,6 @@ package DataStructures.Trees;
 
 import java.util.LinkedList;
 
-/**
- * @author Varun Upadhyay (https://github.com/varunu28)
- */
-
 
 // Driver Program
 public class TreeTraversal {
@@ -37,14 +33,13 @@ public class TreeTraversal {
     }
 }
 
-/**
- * The Node class which initializes a Node of a tree
+/* The Node class which initializes a Node of a tree
  * Consists of all 4 traversal methods: printInOrder, printPostOrder， printPreOrder & printLevelOrder
  * printInOrder: LEFT -> ROOT -> RIGHT
  * printPreOrder: ROOT -> LEFT -> RIGHT
  * printPostOrder: LEFT -> RIGHT -> ROOT
  * printLevelOrder: Prints by level (starting at root), from left to right.
- */
+*/
 class Node {
     Node left, right;
     int data;
@@ -99,10 +94,9 @@ class Node {
         System.out.print(data + " ");
     }
 
-    /**
-     * O(n) time algorithm.
-     * Uses O(n) space to store nodes in a queue to aid in traversal.
-     */
+    /*O(n) time algorithm.
+     *Uses O(n) space to store nodes in a queue to aid in traversal.
+    */
     public void printLevelOrder() {
         LinkedList<Node> queue = new LinkedList<>();
         queue.add(this);
