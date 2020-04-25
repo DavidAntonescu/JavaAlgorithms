@@ -12,10 +12,7 @@ public class PerfectNumber {
         assert isPerfectNumber(28); /* 1 + 2 + 4 + 7 + 14 == 28 */
     }
 
-    /*Check if {@code number} is perfect number or not
-     *@param number the number
-     *@return {@code true} if {@code number} is perfect number, otherwise false*/
-    
+    /*Checks if the number is a perfect number or not*/
     public static boolean isPerfectNumber(int number) {
         int sum = 0;  /* sum of its positive divisors */
         for (int i = 1; i < number; ++i) {
