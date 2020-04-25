@@ -2,16 +2,7 @@ package Maths;
 
 public class MinValue {
 
-    /**
-     * Returns the smaller of two {@code int} values. That is,
-     * the result the argument closer to the value of
-     * {@link Integer#MIN_VALUE}.  If the arguments have the same
-     * value, the result is that same value.
-     *
-     * @param a an argument.
-     * @param b another argument.
-     * @return the smaller of {@code a} and {@code b}.
-     */
+    /*Returns the smaller of two int values.*/
     public static int min(int a, int b) {
         return a <= b ? a : b;
     }
