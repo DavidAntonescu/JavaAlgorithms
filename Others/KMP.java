@@ -1,9 +1,8 @@
 package Others;
 
-/**
- * Implementation of Knuth–Morris–Pratt algorithm
+/*Implementation of Knuth–Morris–Pratt algorithm
  * Usage: see the main function for an example
- */
+*/
 public class KMP {
     //a working example
     public static void main(String[] args) {
