@@ -1,7 +1,6 @@
 package Others;
 
-/* Program to reverse a Stack using Recursion*/
-
+/*A program to reverse a Stack using Recursion*/
 
 import java.util.Stack;
 
