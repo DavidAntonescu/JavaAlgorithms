@@ -57,10 +57,6 @@ public class CursorLinkedList<T> {
     }
 
 
-    /**
-     * @return the logical index of the element within the list , not the actual
-     * index of the [cursorSpace] array
-     */
     public int indexOf(T element) {
 
 
@@ -78,12 +74,6 @@ public class CursorLinkedList<T> {
     }
 
 
-    /**
-     * @param position , the logical index of the element , not the actual one
-     *                 within the [cursorSpace] array .
-     *                 this method should be used to get the index give by indexOf() method.
-     * @return
-     */
 
     public T get(int position) {
 
@@ -187,9 +177,6 @@ public class CursorLinkedList<T> {
         count++;
     }
 
-    /**
-     * @return the index of the next available node
-     */
     private int alloc() {
 
 
