@@ -2,9 +2,8 @@ package Others;
 
 import java.util.BitSet;
 
-/**
- * Generates a crc32 checksum for a given string or byte array
- */
+/*Generates a crc32 checksum for a given string or byte array*/
+
 public class CRC32 {
 
     public static void main(String[] args) {
