@@ -1,10 +1,8 @@
 package DynamicProgramming;
 
+
 import java.util.Scanner;
 
-/**
- * @author Afrizal Fikri (https://github.com/icalF)
- */
 public class LongestIncreasingSubsequence {
     public static void main(String[] args) {
 
