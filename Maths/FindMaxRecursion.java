@@ -9,14 +9,7 @@ public class FindMaxRecursion {
         System.out.println("max value is " + max(array, low, high));
     }
 
-    /**
-     * Get max of array using divide and conquer algorithm
-     *
-     * @param array contains elements
-     * @param low   the index of the first element
-     * @param high  the index of the last element
-     * @return max of {@code array}
-     */
+    /* Get max of array using divide and conquer algorithm*/
     public static int max(int[] array, int low, int high) {
         if (low == high) {
             return array[low]; //or array[high]
