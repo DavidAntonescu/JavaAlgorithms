@@ -11,9 +11,7 @@ public class DecimalToAnyUsingStack {
         assert convert(30, 16).equals("1E");
     }
 
-    /**
-     * Convert decimal number to another radix
-     *
+    /*Convert decimal number to another radix
      * @param number the number to be converted
      * @param radix the radix
      * @return another radix
