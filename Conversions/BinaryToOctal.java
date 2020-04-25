@@ -2,18 +2,10 @@ package Conversions;
 
 import java.util.Scanner;
 
-/**
- * Converts any Binary number to an Octal Number
- *
- * @author Zachary Jones
- */
+/*Converts any Binary number to an Octal Number*/
 public class BinaryToOctal {
 
-    /**
-     * Main method
-     *
-     * @param args Command line arguments
-     */
+    /*Main method*/
     public static void main(String args[]) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Input the binary number: ");
@@ -23,13 +15,7 @@ public class BinaryToOctal {
 
     }
 
-    /**
-     * This method converts a binary number to
-     * an octal number.
-     *
-     * @param binary The binary number
-     * @return The octal number
-     */
+    /*This method converts a binary number to an octal number.*/
     public static String convertBinaryToOctal(int binary) {
         String octal = "";
         int currBit = 0, j = 1;
