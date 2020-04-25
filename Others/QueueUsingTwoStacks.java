@@ -2,21 +2,16 @@ package Others;
 
 import java.util.Stack;
 
-/**
- * This implements Queue using two Stacks.
- *
+/* This implements Queue using two Stacks.
  * Big O Runtime:
  *      insert(): O(1)
  *      remove(): O(1) amortized
  *      isEmpty(): O(1)
- *
  * A queue data structure functions the same as a real world queue.
  * The elements that are added first are the first to be removed.
  * New elements are added to the back/rear of the queue.
- *
- * @author sahilb2 (https://www.github.com/sahilb2)
- *
- */
+*/
+
 class QueueWithStack {
 
     // Stack to keep track of elements inserted into the queue
@@ -24,29 +19,24 @@ class QueueWithStack {
     // Stack to keep track of elements to be removed next in queue
     private Stack outStack;
 
-    /**
-	 * Constructor
-	 */
+    /*Constructor*/
     public QueueWithStack() {
         this.inStack = new Stack();
         this.outStack = new Stack();
     }
 
-    /**
-     * Inserts an element at the rear of the queue
-     *
-     * @param x element to be added
-     */
+    /*Inserts an element at the rear of the queue
+     *@param x element to be added*/
+	
     public void insert(Object x) {
         // Insert element into inStack
         this.inStack.push(x);
     }
 
-    /**
-     * Remove an element from the front of the queue
-     *
+    /* Remove an element from the front of the queue
      * @return the new front of the queue
-     */
+    */
+	
     public Object remove() {
         if(this.outStack.isEmpty()) {
             // Move all elements from inStack to outStack (preserving the order)
@@ -57,11 +47,10 @@ class QueueWithStack {
         return this.outStack.pop();
     }
 
-    /**
-     * Peek at the element from the front of the queue
-     *
+    /* Peek at the element from the front of the queue
      * @return the front element of the queue
-     */
+    */
+	
     public Object peekFront() {
         if(this.outStack.isEmpty()) {
             // Move all elements from inStack to outStack (preserving the order)
@@ -72,39 +61,31 @@ class QueueWithStack {
         return this.outStack.peek();
     }
 
-    /**
-     * Peek at the element from the back of the queue
-     *
+    /* Peek at the element from the back of the queue
      * @return the back element of the queue
-     */
+    */
+	
     public Object peekBack() {
         return this.inStack.peek();
     }
 
-    /**
-     * Returns true if the queue is empty
-     *
+    /* Returns true if the queue is empty
      * @return true if the queue is empty
-     */
+    */
+	
     public boolean isEmpty() {
         return (this.inStack.isEmpty() && this.outStack.isEmpty());
     }
 
 }
 
-/**
- * This class is the example for the Queue class
- *
- * @author sahilb2 (https://www.github.com/sahilb2)
- *
- */
+/*This class is the example for the Queue class*/
+
 public class QueueUsingTwoStacks {
 
-    /**
-     * Main method
-     *
-     * @param args Command line arguments
-     */
+    /* Main method
+    * @param args Command line arguments*/
+	
     public static void main(String args[]){
         QueueWithStack myQueue = new QueueWithStack();
         myQueue.insert(1);
