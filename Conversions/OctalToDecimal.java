@@ -2,20 +2,10 @@ package Conversions;
 
 import java.util.Scanner;
 
-/**
- * Converts any Octal Number to a Decimal Number
- * 
- * @author Zachary Jones
- *
- */
+/*Converts any Octal Number to a Decimal Number*/
 public class OctalToDecimal {
 
-	/**
-	 * Main method
-	 * 
-	 * @param args
-	 *            Command line arguments
-	 */
+	/*Main method*/
 	public static void main(String args[]) {
 		Scanner sc = new Scanner(System.in);
 		System.out.print("Octal Input: ");
@@ -26,13 +16,7 @@ public class OctalToDecimal {
 		sc.close();
 	}
 
-	/**
-	 * This method converts an octal number to a decimal number.
-	 * 
-	 * @param inputOctal
-	 *            The octal number
-	 * @return The decimal number
-	 */
+	/*This method converts an octal number to a decimal number.*/
 	public static int convertOctalToDecimal(String inputOctal) {
 
 		try {
