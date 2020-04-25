@@ -2,19 +2,11 @@ package Conversions;
 
 import java.util.Scanner;
 
-/**
- * Converts any Octal Number to HexaDecimal
- *
- * @author Tanmay Joshi
- */
+
+/*Converts any Octal Number to HexaDecimal*/
 public class OctalToHexadecimal {
 
-    /**
-     * This method converts a Octal number to a decimal number
-     *
-     * @param s The Octal Number
-     * @return The Decimal number
-     */
+    /*This method converts a Octal number to a decimal number*/
     public static int OctToDec(String s) {
         int i = 0;
         for (int j = 0; j < s.length(); j++) {
@@ -26,12 +18,7 @@ public class OctalToHexadecimal {
         return i;
     }
 
-    /**
-     * This method converts a Decimal number to a Hexadecimal number
-     *
-     * @param d The Decimal Number
-     * @return The Hexadecimal number
-     */
+    /*This method converts a Decimal number to a Hexadecimal number*/
     public static String DecimalToHex(int d) {
         String digits = "0123456789ABCDEF";
         if (d <= 0)
@@ -62,4 +49,3 @@ public class OctalToHexadecimal {
         input.close();
     }
 }
-
