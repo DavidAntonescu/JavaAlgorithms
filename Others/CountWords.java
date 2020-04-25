@@ -2,12 +2,8 @@ package Others;
 
 import java.util.Scanner;
 
-/**
- * You enter a string into this program, and it will return how many words were
- * in that particular string
- *
- * @author Marcus
- */
+/*Just enter a string and it will return how many words were in it*/
+
 public class CountWords {
 
     public static void main(String[] args) {
@@ -26,14 +22,12 @@ public class CountWords {
         return s.trim().split("[\\s]+").length;
     }
 
-    /**
-     * counts the number of words in a sentence but ignores all potential
-     * non-alphanumeric characters that do not represent a word. runs in O(n) where
+    /* counts the number of words in a sentence but ignores all potential
+     *non-alphanumeric characters that do not represent a word. runs in O(n) where
      * n is the length of s
-     * 
      * @param s String: sentence with word(s)
      * @return int: number of words
-     */
+    */
     private static int secondaryWordCount(String s) {
         if (s == null || s.isEmpty())
             return 0;
