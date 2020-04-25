@@ -6,22 +6,20 @@ import java.util.stream.IntStream;
 
 import static java.lang.String.format;
 
-/*
- * Interpolation search algorithm implementation
- * <p>
+/* Interpolation search algorithm implementation
  * Worst-case performance	 O(n)
  * Best-case performance	O(1)
  * Average performance	O(log(log(n))) if the elements are  uniformly distributed if not O(n)
  * Worst-case space complexity	O(1)
- */
+*/
+
 class InterpolationSearch {
 
 
-    /**
-     * @param array is a sorted array
+    /* @param array is a sorted array
      * @param key   is a value what shoulb be found in the array
      * @return an index if the array contains the key unless -1
-     */
+    */
     public int find(int array[], int key) {
         // Find indexes of two corners
         int start = 0, end = (array.length - 1);
@@ -70,4 +68,3 @@ class InterpolationSearch {
         System.out.println(format("Found by system method at an index: %d. Is equal: %b", toCheck, toCheck == atIndex));
     }
 }
-
