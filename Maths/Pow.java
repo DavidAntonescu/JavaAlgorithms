@@ -1,6 +1,6 @@
 package Maths;
 
-//POWER (exponentials) Examples (a^b)
+//POWER (exponentials) for example (a^b)
 public class Pow {
     public static void main(String[] args) {
         assert pow(2, 0) == Math.pow(2, 0); // == 1
@@ -9,14 +9,7 @@ public class Pow {
         assert pow(10, 2) == Math.pow(10, 2); // == 100
     }
 
-    /**
-     * Returns the value of the first argument raised to the power of the
-     * second argument
-     *
-     * @param a the base.
-     * @param b the exponent.
-     * @return the value {@code a}<sup>{@code b}</sup>.
-     */
+    /*Returns the value of the first argument raised to the power of the second argument*/
     public static long pow(int a, int b) {
         long result = 1;
         for (int i = 1; i <= b; i++) {
