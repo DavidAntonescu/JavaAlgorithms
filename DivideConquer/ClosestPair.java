@@ -1,62 +1,38 @@
 package divideconquer;
 
-/**
- * For a set of points in a coordinates system (10000 maximum),
- * ClosestPair class calculates the two closest points.
- *
- * @author: anonymous
- * @author: Marisa Afuera
- */
-
+/*For a set of points in a coordinates system (10000 maximum),ClosestPair class calculates the two closest points.*/
 public final class ClosestPair {
 
 
-    /**
-     * Number of points
-     */
+    /*Number of points*/
     int numberPoints = 0;
-    /**
-     * Input data, maximum 10000.
-     */
+    
+    /*Input data, maximum 10000.*/
     private Location[] array;
-    /**
-     * Minimum point coordinate.
-     */
+   
+    /*Minimum point coordinate.*/
     Location point1 = null;
-    /**
-     * Minimum point coordinate.
-     */
+    
+    /*Minimum point coordinate.*/
     Location point2 = null;
-    /**
-     * Minimum point length.
-     */
+    
+    /*Minimum point length.*/
     private static double minNum = Double.MAX_VALUE;
-    /**
-     * secondCount
-     */
+    
+    /*secondCount*/
     private static int secondCount = 0;
 
-    /**
-     * Constructor.
-     */
+    /*Constructor.*/
     ClosestPair(int points) {
         numberPoints = points;
         array = new Location[numberPoints];
     }
 
-    /**
-     * Location class is an auxiliary type to keep points coordinates.
-     */
-
+    /*The location class is an auxiliary type to keep the points' coordinates.*/
     public static class Location {
 
         double x = 0;
         double y = 0;
-
-        /**
-         * @param xpar (IN Parameter)  x coordinate <br/>
-         * @param ypar (IN Parameter)  y coordinate <br/>
-         */
 
         Location(final double xpar, final double ypar) { //Save x, y coordinates
             this.x = xpar;
@@ -75,15 +51,7 @@ public final class ClosestPair {
     }
 
 
-    /**
-     * xPartition function: arrange x-axis.
-     *
-     * @param a     (IN Parameter)  array of points <br/>
-     * @param first (IN Parameter)  first point <br/>
-     * @param last  (IN Parameter)  last point <br/>
-     * @return pivot index
-     */
-
+    /*Arrange x-axis.*/
     public int xPartition(
             final Location[] a, final int first, final int last) {
 
@@ -106,15 +74,7 @@ public final class ClosestPair {
         return i; // pivot index
     }
 
-    /**
-     * yPartition function: arrange y-axis.
-     *
-     * @param a     (IN Parameter)  array of points <br/>
-     * @param first (IN Parameter)  first point <br/>
-     * @param last  (IN Parameter)  last point <br/>
-     * @return pivot index
-     */
-
+    /*Arrange y-axis.*/
     public int yPartition(
             final Location[] a, final int first, final int last) {
 
@@ -137,14 +97,7 @@ public final class ClosestPair {
         return i; // pivot index
     }
 
-    /**
-     * xQuickSort function: //x-axis Quick Sorting.
-     *
-     * @param a     (IN Parameter)  array of points <br/>
-     * @param first (IN Parameter)  first point <br/>
-     * @param last  (IN Parameter)  last point <br/>
-     */
-
+    /*X-axis Quick Sorting*/
     public void xQuickSort(
             final Location[] a, final int first, final int last) {
 
@@ -155,14 +108,7 @@ public final class ClosestPair {
         }
     }
 
-    /**
-     * yQuickSort function: //y-axis Quick Sorting.
-     *
-     * @param a     (IN Parameter)  array of points <br/>
-     * @param first (IN Parameter)  first point <br/>
-     * @param last  (IN Parameter)  last point <br/>
-     */
-
+    /*Y-axis Quick Sorting*/
     public void yQuickSort(
             final Location[] a, final int first, final int last) {
 
@@ -173,14 +119,7 @@ public final class ClosestPair {
         }
     }
 
-    /**
-     * closestPair function: find closest pair.
-     *
-     * @param a        (IN Parameter) array stored before divide <br/>
-     * @param indexNum (IN Parameter) number coordinates divideArray <br/>
-     * @return minimum distance <br/>
-     */
-
+    /*Finds the closest pair.*/
     public double closestPair(final Location[] a, final int indexNum) {
 
         Location[] divideArray = new Location[indexNum];
@@ -264,13 +203,7 @@ public final class ClosestPair {
         return minValue;
     }
 
-    /**
-     * bruteForce function: When the number of coordinates is less than 3.
-     *
-     * @param arrayParam (IN Parameter) array stored before divide <br/>
-     * @return <br/>
-     */
-
+    /*When the number of coordinates is less than 3.*/
     public double bruteForce(final Location[] arrayParam) {
 
         double minValue = Double.MAX_VALUE; // minimum distance
@@ -323,14 +256,6 @@ public final class ClosestPair {
         }
         return result; // If only one point returns 0.
     }
-
-    /**
-     * main function: execute class.
-     *
-     * @param args (IN Parameter) <br/>
-     * @throws IOException If an input or output
-     *                     exception occurred
-     */
 
     public static void main(final String[] args) {
 
