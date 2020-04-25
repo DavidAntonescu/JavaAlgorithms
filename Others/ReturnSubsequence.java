@@ -16,10 +16,9 @@ public class ReturnSubsequence {
         s.close();
     }
 
-    /**
-     * @param givenString
-     * @return subsequence
-     */
+    /*@param givenString
+     *@return subsequence*/
+    
     private static String[] returnSubsequence(String givenString) {
         if (givenString.length() == 0) // If string is empty we will create an array of size=1 and insert "" (Empty string) in it
         {
