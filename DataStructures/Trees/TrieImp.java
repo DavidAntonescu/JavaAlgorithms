@@ -1,10 +1,6 @@
 package DataStructures.Trees;
 
-/**
- * Trie Data structure implementation without any libraries
- *
- * @author Dheeraj Kumar Barnwal (https://github.com/dheeraj92)
- */
+/*Tree Data structure implementation without any libraries*/
 
 import java.util.Scanner;
 
@@ -73,9 +69,7 @@ public class TrieImp {
         System.out.println(print);
     }
 
-    /**
-     * Regex to check if word contains only a-z character
-     */
+    /*Regex to check if word contains only a-z character*/
     public static boolean isValid(String word) {
         return word.matches("^[a-z]+$");
     }
