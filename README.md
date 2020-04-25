@@ -6,7 +6,7 @@ A collection of algorithms implemented in Java. You can run and edit the algorit
 
 ---
 ## Navigation
-See the [directory](DIRECTORY.md).
+If you wish to see a certain algorithm in particular navigate with the [directory](DIRECTORY.md).
 
 ---
 
