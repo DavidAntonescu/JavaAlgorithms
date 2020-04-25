@@ -3,9 +3,6 @@ package DataStructures.Lists;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * @author https://github.com/shellhub
- */
 
 public class MergeSortedArrayList {
     public static void main(String[] args) {
@@ -27,13 +24,7 @@ public class MergeSortedArrayList {
         System.out.println("listC: " + listC);
     }
 
-    /**
-     * merge two sorted ArrayList
-     *
-     * @param listA the first list to merge
-     * @param listB the second list to merge
-     * @param listC the result list after merging
-     */
+    /*merge two sorted ArrayList*/
     public static void merge(List<Integer> listA, List<Integer> listB, List<Integer> listC) {
         int pa = 0; /* the index of listA */
         int pb = 0; /* the index of listB */
