@@ -2,14 +2,11 @@ package Others;
 
 import java.util.Scanner;
 
-/**
- * Fibonacci sequence, and characterized by the fact that every number
+/* Fibonacci sequence, and characterized by the fact that every number
  * after the first two is the sum of the two preceding ones.
- * <p>
- * Fibonacci sequence: 0, 1, 1, 2, 3, 5, 8, 13, 21,...
- * <p>
- * Source for the explanation: https://en.wikipedia.org/wiki/Fibonacci_number
- */
+ * Example of Fibonacci sequence: 0, 1, 1, 2, 3, 5, 8, 13, 21,...
+ * Source of the explanation: https://en.wikipedia.org/wiki/Fibonacci_number
+*/
 
 public class FibToN {
     public static void main(String[] args) {
