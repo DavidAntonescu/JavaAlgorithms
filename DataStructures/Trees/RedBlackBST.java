@@ -2,9 +2,7 @@ package DataStructures.Trees;
 
 import java.util.Scanner;
 
-/**
- * @author jack870131
- */
+
 public class RedBlackBST {
 
     private final int R = 0;
