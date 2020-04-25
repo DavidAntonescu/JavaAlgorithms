@@ -4,19 +4,14 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-/**
- * This method produces a reversed version of a string
- *
- * @author Unknown
- */
+/*This method produces a reversed version of a string*/
+
 public class ReverseString {
 
-    /**
-     * This method reverses the string str and returns it
-     *
-     * @param str String to be reversed
-     * @return Reversed string
-     */
+    /*This method reverses the string str and returns it
+     *@param str String to be reversed
+     *@return Reversed string*/
+	
     public static String reverse(String str) {
         if (str == null || str.isEmpty()) return str;
 
@@ -29,12 +24,10 @@ public class ReverseString {
         return new String(arr);
     }
 
-    /**
-     * Main Method
-     *
-     * @param args Command line arguments
-     * @throws IOException Exception thrown because of BufferedReader
-     */
+    /*Main Method
+     *@param args Command line arguments
+     *@throws IOException Exception thrown because of BufferedReader*/
+	
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Enter the string");
@@ -43,4 +36,3 @@ public class ReverseString {
         br.close();
     }
 }
-		
