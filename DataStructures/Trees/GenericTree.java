@@ -4,11 +4,9 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Scanner;
 
-/**
- * A generic tree is a tree which can have as many children as it can be
+/* A generic tree is a tree which can have as many children as it can be
  * It might be possible that every node present is directly connected to
  * root node.
- * <p>
  * In this code
  * Every function has two copies: one function is helper function which can be called from
  * main and from that function a private function is called which will do the actual work.
@@ -66,12 +64,8 @@ public class GenericTree {
         }
     }
 
-    /**
-     * One call store the size directly but if you are asked compute size this function to calculate
-     * size goes as follows
-     *
-     * @return size
-     */
+    /* One call store the size directly but if you are asked compute size this function to calculate
+     * size goes as follows*/
     public int size2call() {
         return size2(root);
     }
