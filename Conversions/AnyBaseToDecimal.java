@@ -1,8 +1,5 @@
 package Conversions;
 
-/**
- * @author Varun Upadhyay (https://github.com/varunu28)
- */
 
 // Driver program
 public class AnyBaseToDecimal {
@@ -14,14 +11,7 @@ public class AnyBaseToDecimal {
         assert convertToDecimal("XYZ", 36) == Integer.valueOf("XYZ", 36);
     }
 
-    /**
-     * Convert any radix to decimal number
-     *
-     * @param s     the string to be convert
-     * @param radix the radix
-     * @return decimal of bits
-     * @throws NumberFormatException if {@code bits} or {@code radix} is invalid
-     */
+    /*Convert any radix to decimal number*/
     public static int convertToDecimal(String s, int radix) {
         int num = 0;
         int pow = 1;
@@ -37,13 +27,7 @@ public class AnyBaseToDecimal {
         return num;
     }
 
-    /**
-     * Convert character to integer
-     *
-     * @param c the character
-     * @return represented digit of given character
-     * @throws NumberFormatException if {@code ch} is not UpperCase or Digit character.
-     */
+    /*Convert character to integer*/
     public static int valOfChar(char c) {
         if (!(Character.isUpperCase(c) || Character.isDigit(c))) {
             throw new NumberFormatException("invalid character :" + c);
