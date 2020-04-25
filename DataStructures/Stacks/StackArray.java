@@ -1,23 +1,15 @@
 package DataStructures.Stacks;
 
-/**
- * This class implements a Stack using a regular array.
- * <p>
+/*This class implements a Stack using a regular array.
  * A stack is exactly what it sounds like. An element gets added to the top of
  * the stack and only the element on the top may be removed. This is an example
  * of an array implementation of a Stack. So an element can only be added/removed
  * from the end of the array. In theory stack have no fixed size, but with an
  * array implementation it does.
- *
- * @author Unknown
- */
+*/
 public class StackArray {
 
-    /**
-     * Main method
-     *
-     * @param args Command line arguments
-     */
+    /*Main method*/
     public static void main(String[] args) {
         // Declare a stack of maximum size 4
         StackArray myStackArray = new StackArray(4);
@@ -36,49 +28,31 @@ public class StackArray {
         System.out.println(myStackArray.peek()); // will print 2
     }
 
-    /**
-     * Default initial capacity.
-     */
+    /*Default initial capacity.*/
     private static final int DEFAULT_CAPACITY = 10;
 
-    /**
-     * The max size of the Stack
-     */
+    /*The max size of the Stack*/
     private int maxSize;
 
-    /**
-     * The array representation of the Stack
-     */
+    /*The array representation of the Stack*/
     private int[] stackArray;
 
-    /**
-     * The top of the stack
-     */
+    /*The top of the stack*/
     private int top;
 
-    /**
-     * init Stack with DEFAULT_CAPACITY
-     */
+    /*init Stack with DEFAULT_CAPACITY*/
     public StackArray() {
         this(DEFAULT_CAPACITY);
     }
     
-    /**
-     * Constructor
-     *
-     * @param size Size of the Stack
-     */
+    /*Constructor*/
     public StackArray(int size) {
         maxSize = size;
         stackArray = new int[maxSize];
         top = -1;
     }
 
-    /**
-     * Adds an element to the top of the stack
-     *
-     * @param value The element added
-     */
+    /*Adds an element to the top of the stack*/
     public void push(int value) {
         if (!isFull()) { // Checks for a full stack
             top++;
@@ -89,11 +63,7 @@ public class StackArray {
         }
     }
 
-    /**
-     * Removes the top element of the stack and returns the value you've removed
-     *
-     * @return value popped off the Stack
-     */
+    /*Removes the top element of the stack and returns the value you've removed*/
     public int pop() {
         if (!isEmpty()) { // Checks for an empty stack
             return stackArray[top--];
@@ -108,11 +78,7 @@ public class StackArray {
         }
     }
 
-    /**
-     * Returns the element at the top of the stack
-     *
-     * @return element at the top of the stack
-     */
+    /*Returns the element at the top of the stack*/
     public int peek() {
         if (!isEmpty()) { // Checks for an empty stack
             return stackArray[top];
@@ -133,27 +99,17 @@ public class StackArray {
         maxSize = newSize;
     }
 
-    /**
-     * Returns true if the stack is empty
-     *
-     * @return true if the stack is empty
-     */
+    /*Returns true if the stack is empty*/
     public boolean isEmpty() {
         return (top == -1);
     }
 
-    /**
-     * Returns true if the stack is full
-     *
-     * @return true if the stack is full
-     */
+    /*Returns true if the stack is full*/
     public boolean isFull() {
         return (top + 1 == maxSize);
     }
 
-    /**
-     * Deletes everything in the Stack
-     * <p>
+    /*Deletes everything in the Stack
      * Doesn't delete elements in the array
      * but if you call push method after calling
      * makeEmpty it will overwrite previous
