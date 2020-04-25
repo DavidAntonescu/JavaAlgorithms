@@ -3,14 +3,9 @@ package Others;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-/**
- * Class for finding the lowest base in which a given integer is a palindrome.
+/* Class for finding the lowest base in which a given integer is a palindrome.
  * Includes auxiliary methods for converting between bases and reversing strings.
- * <p>
- * NOTE: There is potential for error, see note at line 63.
- *
- * @author RollandMichael
- * @version 2017.09.28
+ * NOTE: There is potential for error, see note at line 59.
  */
 public class LowestBasePalindrome {
 
@@ -32,14 +27,12 @@ public class LowestBasePalindrome {
         in.close();
     }
 
-    /**
-     * Given a number in base 10, returns the lowest base in which the
+    /* Given a number in base 10, returns the lowest base in which the
      * number is represented by a palindrome (read the same left-to-right
      * and right-to-left).
-     *
      * @param num A number in base 10.
      * @return The lowest base in which num is a palindrome.
-     */
+    */
     public static int lowestBasePalindrome(int num) {
         int base, num2 = num;
         int digit;
