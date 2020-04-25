@@ -2,18 +2,10 @@ package Conversions;
 
 import java.util.Scanner;
 
-/**
- * This class converts Decimal numbers to Octal Numbers
- *
- *
- */
+/*This class converts Decimal numbers to Octal Numbers*/
 public class DecimalToOctal {
-    /**
-     * Main Method
-     *
-     * @param args Command line Arguments
-     */
-
+    
+    /*Main Method*/
     //enter in a decimal value to get Octal output
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
