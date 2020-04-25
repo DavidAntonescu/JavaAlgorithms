@@ -1,17 +1,11 @@
 package DataStructures.Stacks;
-/**
-* Implementation of a stack using nodes.
-* Unlimited size, no arraylist.
-*
-* @author Kyler Smith, 2017
-*/
+/*Implementation of a stack using nodes.
+* Unlimited size, no arraylist.*/
 
 
 public class NodeStack<Item> {
 
-    /**
-    * Entry point for the program.
-    */
+    /*Entry point for the program.*/
     public static void main(String[] args) {
         NodeStack<Integer> Stack = new NodeStack<Integer>();
 
@@ -33,8 +27,7 @@ public class NodeStack<Item> {
         System.out.println("y : " + y);
     }
 
-    /**
-    * Information each node should contain.
+    /*Information each node should contain.
     * @value data : information of the value in the node
     * @value head : the head of the stack
     * @value next : the next value from this node
@@ -48,9 +41,7 @@ public class NodeStack<Item> {
     private static int size = 0;
 
 
-    /**
-    * Constructors for the NodeStack.
-    */
+    /*Constructors for the NodeStack.*/
     public NodeStack() {
 	}
 
@@ -58,11 +49,7 @@ public class NodeStack<Item> {
         this.data = item;
     }
 
-    /**
-    * Put a value onto the stack.
-    *
-    * @param item : value to be put on the stack.
-    */
+    /*Put a value onto the stack.*/
     public void push(Item item) {
 
     	NodeStack<Item> newNs = new NodeStack<Item>(item);
@@ -80,11 +67,7 @@ public class NodeStack<Item> {
         NodeStack.setSize(NodeStack.getSize() + 1);
     }
 
-    /**
-    * Value to be taken off the stack.
-    *
-    * @return item : value that is returned.
-    */
+    /*Value to be taken off the stack.*/
     public Item pop() {
 
     	Item item = (Item) NodeStack.head.getData();
@@ -97,35 +80,22 @@ public class NodeStack<Item> {
         return item;
     }
 
-    /**
-    * Value that is next to be taken off the stack.
-    *
-    * @return item : the next value that would be popped off the stack.
-    */
+    /*Value that is next to be taken off the stack.*/
     public Item peek() {
         return (Item) NodeStack.head.getData();
     }
 
-    /**
-    * If the stack is empty or there is a value in.
-    *
-    * @return boolean : whether or not the stack has anything in it.
-    */
+    /*If the stack is empty or there is a value in.*/
     public boolean isEmpty() {
         return NodeStack.getSize() == 0;
     }
 
-    /**
-    * Returns the size of the stack.
-    *
-    * @return int : number of values in the stack.
-    */
+    /*Returns the size of the stack.*/
     public int size() {
         return NodeStack.getSize();
     }
 
-    /**
-    * Print the contents of the stack in the following format.
+    /*Print the contents of the stack in the following format.
     *
     * x <- head (next out)
     * y
