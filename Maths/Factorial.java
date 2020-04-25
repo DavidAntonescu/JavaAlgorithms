@@ -11,7 +11,7 @@ public class Factorial {
     /*Calculate factorial N*/
     public static long factorial(int n) {
         if (n < 0) {
-            throw new ArithmeticException("n < 0");     //Dont work with less than 0
+            throw new ArithmeticException("n < 0");     //Doesn't work with less than 0
         }
         long fac = 1;
         for (int i = 1; i <= n; ++i) {
