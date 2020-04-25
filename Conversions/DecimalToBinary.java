@@ -2,28 +2,19 @@ package Conversions;
 
 import java.util.Scanner;
 
-/**
- * This class converts a Decimal number to a Binary number
- *
- *
- */
+
+/*This class converts a Decimal number to a Binary number*/
 class DecimalToBinary {
 
-    /**
-     * Main Method
-     *
-     * @param args Command Line Arguments
-     */
+    /*Main Method*/
     public static void main(String args[]) {
         conventionalConversion();
         bitwiseConversion();
     }
 
-    /**
-     * This method converts a decimal number
+    /* This method converts a decimal number
      * to a binary number using a conventional
-     * algorithm.
-     */
+     * algorithm.*/
     public static void conventionalConversion() {
         int n, b = 0, c = 0, d;
         Scanner input = new Scanner(System.in);
@@ -38,11 +29,8 @@ class DecimalToBinary {
         input.close();
     }
 
-    /**
-     * This method converts a decimal number
-     * to a binary number using a bitwise
-     * algorithm
-     */
+    /* This method converts a decimal number
+     * to a binary number using a bitwise algorithm*/
     public static void bitwiseConversion() {
         int n, b = 0, c = 0, d;
         Scanner input = new Scanner(System.in);
