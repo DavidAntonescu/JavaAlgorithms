@@ -6,13 +6,8 @@ import java.util.List;
 import java.util.ArrayList;
 
 
-/**
- * Creates a random password from ASCII letters
- * Given password length bounds
- *
- * @author AKS1996
- * @date 2017.10.25
- */
+/* Creates a random password from ASCII letters*/
+
 class PasswordGen {
     public static void main(String args[]) {
         String password = generatePassword(8, 16);
