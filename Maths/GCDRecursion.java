@@ -1,8 +1,5 @@
 package Maths;
 
-/**
- * @author https://github.com/shellhub/
- */
 public class GCDRecursion {
     public static void main(String[] args) {
         System.out.println(gcd(20, 15)); /* output: 5 */
@@ -10,13 +7,7 @@ public class GCDRecursion {
         System.out.println(gcd(gcd(10, 5), gcd(5, 10))); /* output: 5 */
     }
 
-    /**
-     * get greatest common divisor
-     *
-     * @param a the first number
-     * @param b the second number
-     * @return gcd
-     */
+    /*Gets the greatest common divisor*/
     public static int gcd(int a, int b) {
 
         if (a < 0 || b < 0) {
