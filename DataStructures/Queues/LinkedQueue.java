@@ -21,43 +21,26 @@ public class LinkedQueue {
         }
     }
 
-    /**
-     * Front of Queue
-     */
+    /*Front of Queue*/
     private Node front;
 
-    /**
-     * Rear of Queue
-     */
+    /*Rear of Queue*/
     private Node rear;
 
-    /**
-     * Size of Queue
-     */
+    /*Size of Queue*/
     private int size;
 
-    /**
-     * Init LinkedQueue
-     */
+    /*Init LinkedQueue*/
     public LinkedQueue() {
         front = rear = new Node();
     }
 
-    /**
-     * Check if queue is empty
-     *
-     * @return <tt>true</tt> if queue is empty, otherwise <tt>false</tt>
-     */
+    /*Check if queue is empty*/
     public boolean isEmpty() {
         return size == 0;
     }
 
-    /**
-     * Add element to rear of queue
-     *
-     * @param data insert value
-     * @return <tt>true</tt> if add successfully
-     */
+    /*Add element to rear of queue*/
     public boolean enqueue(int data) {
         Node newNode = new Node(data);
         rear.next = newNode;
@@ -66,11 +49,7 @@ public class LinkedQueue {
         return true;
     }
 
-    /**
-     * Remove element at the front of queue
-     *
-     * @return element at the front of queue
-     */
+    /* Remove element at the front of queue*/
     public int dequeue() {
         if (isEmpty()) {
             throw new NoSuchElementException("queue is empty");
@@ -88,11 +67,7 @@ public class LinkedQueue {
         return retValue;
     }
 
-    /**
-     * Peek element at the front of queue without removing
-     *
-     * @return element at the front
-     */
+    /*Peek element at the front of queue without removing*/
     public int peekFront() {
         if (isEmpty()) {
             throw new NoSuchElementException("queue is empty");
@@ -100,11 +75,7 @@ public class LinkedQueue {
         return front.next.data;
     }
 
-    /**
-     * Peek element at the rear of queue without removing
-     *
-     * @return element at the front
-     */
+    /*Peek element at the rear of queue without removing*/
     public int peekRear() {
         if (isEmpty()) {
             throw new NoSuchElementException("queue is empty");
@@ -112,18 +83,12 @@ public class LinkedQueue {
         return rear.data;
     }
 
-    /**
-     * Return size of queue
-     *
-     * @return size of queue
-     */
+    /*Return size of queue*/
     public int size() {
         return size;
     }
 
-    /**
-     * Clear all nodes in queue
-     */
+    /*Clear all nodes in queue*/
     public void clear() {
         while (!isEmpty()) {
             dequeue();
