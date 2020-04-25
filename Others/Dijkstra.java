@@ -1,17 +1,13 @@
 package Others;
 
 
-/**
- * Dijkstra's algorithm,is a graph search algorithm that solves the single-source
- * shortest path problem for a graph with nonnegative edge path costs, producing
- * a shortest path tree.
- * <p>
+/* Dijkstra's algorithm,is a graph search algorithm that solves the single-source
+ * shortest path problem for a graph with nonnegative edge path costs, producing a shortest path tree.
  * NOTE:  The inputs to Dijkstra's algorithm are a directed and weighted graph consisting
  * of 2 or more nodes, generally represented by an adjacency matrix or list, and a start node.
- * <p>
  * Original source of code: https://rosettacode.org/wiki/Dijkstra%27s_algorithm#Java
- * Also most of the comments are from RosettaCode.
- */
+ * Most comments are from RosettaCode.
+*/
 
 import java.util.*;
 
